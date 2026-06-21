@@ -7,8 +7,10 @@
         meta.description = "The development environment for this flake";
 
         packages = [
-          pkgs.lix
           pkgs.agenix
+          pkgs.just
+          pkgs.lix
+          pkgs.nh
         ];
       };
     };
