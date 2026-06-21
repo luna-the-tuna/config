@@ -9,6 +9,11 @@ rec {
     root = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKFKzBl57zM1v3tF5fhK6m7hJXJF9KK7qGuyWFDP+Jys root@crona";
   };
 
+  excalibur = {
+    luna = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIxCvGO9OqARsPJl/bKRumMHC/zFgRyFLEVQrru/z7qr luna@excalibur";
+    root = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKgUhyYJ4q607/6gZdxfeezuWhQp/n7gEOrqei+HPbxq root@excalibur";
+  };
+
   tsubaki = {
     luna = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBcZaUMmxj09P5CSrRbLcZuO5L601EY5ag6oYHmqAnwf luna@tsubaki";
     root = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVy6EUygJcY5EDs1W8dQFkxiBTZh2yOyR4g1PhH0DeQ root@tsubaki";
@@ -19,5 +24,9 @@ rec {
     blackstar.root
     crona.luna
     crona.root
+    excalibur.luna
+    excalibur.root
+    tsubaki.luna
+    tsubaki.root
   ];
 }
