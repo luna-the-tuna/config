@@ -12,13 +12,13 @@
           default = false;
           defaultText = "<name>";
           description = "Whether this is the primary user on the system.";
-          readOnly = true;
           type = lib.types.bool;
         };
 
         name = lib.mkOption {
           description = "The username of the user.";
           example = "maka";
+          readOnly = true;
           type = lib.types.strMatching "([a-z0-9]+)";
         };
 

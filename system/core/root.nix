@@ -1,5 +1,6 @@
 {
   config,
+  keys,
   mkNixosModule,
   self,
   ...
@@ -7,6 +8,7 @@
 mkNixosModule {
   users.users.root = {
     hashedPasswordFile = config.age.secrets."users/root".path;
+    openssh.authorizedKeys.keys = keys.all;
   };
 
   age.secrets = {

@@ -87,6 +87,12 @@
       url = "github:nix-systems/default";
     };
 
+    tangled = {
+      url = "git+https://tangled.org/tangled.org/core";
+      inputs.gomod2nix.inputs.flake-utils.follows = "flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     treefmt = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";

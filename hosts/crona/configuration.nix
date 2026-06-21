@@ -2,7 +2,6 @@
 {
   imports = [
     inputs.catppuccin.nixosModules.default
-    inputs.disko.nixosModules.default
 
     ./hardware-configuration.nix
     ./disk-configuration.nix

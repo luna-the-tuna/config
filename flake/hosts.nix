@@ -1,5 +1,6 @@
 {
   inputs,
+  keys,
   lib,
   self,
   ...
@@ -7,6 +8,7 @@
 let
   modules.nixos = [
     inputs.agenix.nixosModules.default
+    inputs.disko.nixosModules.default
   ];
 
   modules.darwin = [
@@ -19,6 +21,12 @@ in
   easy-hosts = {
     useGlobalPkgs = true;
 
+    hosts.blackstar = {
+      arch = "x86_64";
+      class = "nixos";
+      path = "${self}/hosts/blackstar/configuration.nix";
+    };
+
     hosts.crona = {
       arch = "x86_64";
       class = "nixos";
@@ -27,7 +35,7 @@ in
 
     shared = {
       modules = [ "${self}/system" ];
-      specialArgs = { inherit self inputs; };
+      specialArgs = { inherit self inputs keys; };
     };
 
     perClass = class: {

@@ -1,5 +1,6 @@
 {
   config,
+  keys,
   lib,
   mkSystemModule,
   pkgs,
@@ -11,10 +12,9 @@ let
 
   users = builtins.attrValues cfg;
   primaryUserError = throw "must have exactly one primary user defined";
-
   existingGroups = lib.mapAttrsToList (name: group: group.name) config.users.groups;
-  doesGroupExist = name: builtins.elem name existingGroups;
 
+  doesGroupExist = name: builtins.elem name existingGroups;
   getUserPasswordFile = user: "${self}/secrets/${config.networking.hostName}/users/${user.name}.age";
 
   groups = builtins.filter doesGroupExist [
@@ -47,6 +47,7 @@ mkSystemModule {
   shared.config.users.users = lib.mapAttrs (name: user: {
     description = user.fullName;
     shell = pkgs.bashInteractive;
+    openssh.authorizedKeys.keys = keys.all;
   }) cfg;
 
   nixos.config.users.users = lib.mapAttrs (name: user: {

@@ -1,5 +1,6 @@
 {
   inputs,
+  keys,
   mkSystemModule,
   self,
   ...
@@ -17,7 +18,7 @@ mkSystemModule {
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "home-manager-backup";
-    extraSpecialArgs = { inherit self inputs; };
+    extraSpecialArgs = { inherit self inputs keys; };
     sharedModules = [ "${self}/home" ];
   };
 }
