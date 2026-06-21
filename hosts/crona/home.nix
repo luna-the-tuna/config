@@ -207,7 +207,6 @@ in
     vimAlias = true;
     vimdiffAlias = true;
     viAlias = true;
-    useGlobalPkgs = true;
 
     imports = [
       ./neovim.nix

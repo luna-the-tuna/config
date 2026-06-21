@@ -52,11 +52,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781180057,
-        "narHash": "sha256-sh5cl74+o7PBUp5igMeqGoofiyUguudIS8Cw6jXlKjw=",
+        "lastModified": 1781255309,
+        "narHash": "sha256-n2P5xkAYGylrJ3feu7L6uaCUw/+jW8rk+HO127gDbFA=",
         "owner": "catppuccin",
         "repo": "nix",
-        "rev": "c3623ae5172427612749154de46455d97e1a66ad",
+        "rev": "036c78ea4cd8a42c8546c6316a944fd7d59d4341",
         "type": "github"
       },
       "original": {
@@ -143,11 +143,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781194145,
-        "narHash": "sha256-IxN3STgvD90Ap23Fa6djRTF2u1d9PZbpdfeb/L2X+ik=",
+        "lastModified": 1781537908,
+        "narHash": "sha256-h8vS1kzEh63rIzUGt3tTqClDeJEpdV6XGIqxMctz81U=",
         "owner": "extersia-org",
         "repo": "pkgs",
-        "rev": "bbd563fdadab6fbd6b71ffe2e0053572f6743d27",
+        "rev": "ddfea80100f598cd14e7beec2373d58a19d7d911",
         "type": "github"
       },
       "original": {
@@ -186,11 +186,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1781236970,
-        "narHash": "sha256-vD9qAPuGpLktDpfmt2mMnsO0YJVZjFCWWUlqUre1jpY=",
+        "lastModified": 1781409739,
+        "narHash": "sha256-6dadOVlqPpjy0w4WuwvX+Qx0Kkaabm3tahMrCrr72Rg=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "e198f98260ad14a8229ac8f5e9885e599f167149",
+        "rev": "ef56de5faccb3ac59d95aa31cce551ff72e35bed",
         "type": "gitlab"
       },
       "original": {
@@ -300,11 +300,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781189114,
-        "narHash": "sha256-5inaamLgUMWy+MOBE9ChF9QAF1o/74LFuHkI0W/9rqc=",
+        "lastModified": 1781533608,
+        "narHash": "sha256-Mgsu/x5cs8EqlhIQ7bMBo14LpkAYtgzDbG/S/eattJA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "486595d2cf49cfcd649b58a284fa11ac0e34da22",
+        "rev": "8aec76cc1e045f37b55d82ca3cee4910ae04d3db",
         "type": "github"
       },
       "original": {
@@ -382,11 +382,11 @@
     "lix": {
       "flake": false,
       "locked": {
-        "lastModified": 1781188256,
-        "narHash": "sha256-byG4WdIQedN0EVQYqs1kibIbzMhhMYYZultROwlENW4=",
+        "lastModified": 1781463378,
+        "narHash": "sha256-QwXrhy4E+hcFqceqqbTPaLZpWTRykB5jf6a3bbXKw9k=",
         "ref": "refs/heads/main",
-        "rev": "abfe9d0c3efc2204b0f88ff87a642c174a09ff09",
-        "revCount": 19228,
+        "rev": "c019a776e9ea34682f9e785547f5267d35173522",
+        "revCount": 19236,
         "type": "git",
         "url": "https://git.lix.systems/lix-project/lix"
       },
@@ -476,11 +476,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781034432,
-        "narHash": "sha256-+UuS36un3lXLtKsGCYQnOn51hDhB+dZ1SHoHXClnV/0=",
+        "lastModified": 1781536564,
+        "narHash": "sha256-/B/Ok82DMHauzJqtKJmHvH/edVMhnRjIjMslUimCI/E=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "e9fbbd56eab78751ba4c166c31a1667042528ced",
+        "rev": "bf0ec96c9246ee739160f2a67cac29377ce0aa1b",
         "type": "github"
       },
       "original": {
@@ -540,11 +540,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781101834,
-        "narHash": "sha256-gNVY6SYglFe37FpD+NnOjTipsqvVMM2vh/uc22KDEsA=",
+        "lastModified": 1781425310,
+        "narHash": "sha256-GTBka4Df/ZOacmisI/DI2LICyNChEqn/giah83LucdM=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "0243dd6707c969fc8440216c811b3f2e4a4cceb7",
+        "rev": "aeaf7c81a45d3761da61cb05bfc370ac6d1b0441",
         "type": "github"
       },
       "original": {
@@ -600,11 +600,11 @@
         "sqlite-lib-src": "sqlite-lib-src"
       },
       "locked": {
-        "lastModified": 1781253163,
-        "narHash": "sha256-FddzQAakxc/VCC3T090U58ha/7lh0FFD2ev5eUOk6dE=",
+        "lastModified": 1781533690,
+        "narHash": "sha256-WzSn3XQ2CHVv4EdQOcdNm6WRcLdewCM03LKfw4XA5oU=",
         "ref": "refs/heads/master",
-        "rev": "49e34bda909613ecc4b4d7a2cf9bbd1b551ec5bc",
-        "revCount": 2639,
+        "rev": "5c97f1cc886344bb8a9eba315a39c0fc14cee51f",
+        "revCount": 2677,
         "type": "git",
         "url": "https://tangled.org/tangled.org/core"
       },
@@ -643,11 +643,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781173532,
-        "narHash": "sha256-MwnZpL82aQO1I15JH525vz6REI/OULEAmXDp6cIcgNg=",
+        "lastModified": 1781426426,
+        "narHash": "sha256-yzxJMNgv/sLishhCT9G2lm7W9CjHSlXWkfbWC7vfjqc=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "f13e82162fae68af7716147207fa5f868f5ca381",
+        "rev": "df336067c1a8af3bfce3f0b88b66dc1c57411b4e",
         "type": "github"
       },
       "original": {
