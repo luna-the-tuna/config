@@ -1,6 +1,7 @@
 {
   imports = [
     ./arguments
+    ./checks
 
     ./devshell.nix
     ./hosts.nix

@@ -6,6 +6,7 @@ let
   };
 
   overlays = [
+    inputs.extersia-pkgs.overlays.default
     inputs.firefox-addons.overlays.default
     inputs.lix-module.overlays.default
     inputs.self.overlays.default

@@ -71,6 +71,26 @@
         "type": "github"
       }
     },
+    "extersia-pkgs": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780710990,
+        "narHash": "sha256-KMsbbViSEkTEIxkKTxb1DVA7zLPXjiuxgb2ubWxbeWk=",
+        "owner": "extersia-org",
+        "repo": "pkgs",
+        "rev": "d2933e36d85596c6db0958e43e48366f3a8b0720",
+        "type": "github"
+      },
+      "original": {
+        "owner": "extersia-org",
+        "repo": "pkgs",
+        "type": "github"
+      }
+    },
     "firefox-addons": {
       "inputs": {
         "nixpkgs": [
@@ -233,6 +253,7 @@
         "catppuccin-palette": "catppuccin-palette",
         "disko": "disko",
         "easy-hosts": "easy-hosts",
+        "extersia-pkgs": "extersia-pkgs",
         "firefox-addons": "firefox-addons",
         "flake-parts": "flake-parts",
         "flake-utils": "flake-utils",
