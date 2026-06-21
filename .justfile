@@ -1,3 +1,4 @@
+export NH_ELEVATION_STRATEGY := "run0"
 export NH_DARWIN_FLAKE := justfile_directory()
 export NH_FLAKE := justfile_directory()
 export NH_OS_FLAKE := justfile_directory()
