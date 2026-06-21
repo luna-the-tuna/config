@@ -52,10 +52,11 @@ in
     lf = lib.getExe pkgs.yazi;
   };
 
-  programs.vesktop.enable = true;
   programs.bat.enable = true;
-  programs.yazi.enable = true;
   programs.nix-your-shell.enable = true;
+  programs.opencode.enable = true;
+  programs.vesktop.enable = true;
+  programs.yazi.enable = true;
 
   programs.spicetify = {
     enable = true;
