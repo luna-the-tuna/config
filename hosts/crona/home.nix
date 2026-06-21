@@ -38,6 +38,12 @@ in
     colorScheme = "dark";
   };
 
+  home.pointerCursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+    size = 24;
+  };
+
   home.shellAliases = {
     q = "exit";
     cat = lib.getExe pkgs.bat;
@@ -354,8 +360,8 @@ in
 
         env = [
           (mkEnv "DISPLAY" ":2")
-          (mkEnv "XCURSOR_SIZE" "24")
-          (mkEnv "HYPRCURSOR_SIZE" "24")
+          (mkEnv "XCURSOR_SIZE" (toString config.home.pointerCursor.size))
+          (mkEnv "HYPRCURSOR_SIZE" (toString config.home.pointerCursor.size))
         ];
 
         bind = [
