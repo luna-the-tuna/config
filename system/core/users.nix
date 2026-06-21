@@ -37,7 +37,7 @@ mkSystemModule {
 
   darwin.config = {
     system.primaryUser = config.lib.soul.users.primary.name;
-    users.knownUsers = map (user: user.name) cfg;
+    users.knownUsers = map (user: user.name) users;
   };
 
   nixos.config = {
@@ -60,7 +60,7 @@ mkSystemModule {
     name: user: lib.nameValuePair "users/${user.name}" { file = getUserPasswordFile user; }
   ) cfg;
 
-  darwin.config.users.users = self.lib.attrset.imapAttrs1 (index: name: user: {
+  darwin.config.users.users = self.lib.attrsets.imapAttrs1 (index: name: user: {
     uid = 500 + index;
     createHome = true;
     home = "/Users/${user.name}";

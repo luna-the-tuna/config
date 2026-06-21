@@ -33,6 +33,12 @@ in
       path = "${self}/hosts/crona/configuration.nix";
     };
 
+    hosts.excalibur = {
+      arch = "aarch64";
+      class = "darwin";
+      path = "${self}/hosts/excalibur/configuration.nix";
+    };
+
     hosts.tsubaki = {
       arch = "x86_64";
       class = "nixos";

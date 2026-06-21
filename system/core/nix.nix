@@ -1,4 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
+let
+  sudoers = config.lib.soul.systems.switch {
+    darwin = "@admin";
+    linux = "@wheel";
+  };
+in
 {
   nix = {
     channel.enable = false;
@@ -13,8 +19,8 @@
       keep-outputs = true;
       keep-derivations = true;
 
-      allowed-users = [ "@wheel" ];
-      trusted-users = [ "@wheel" ];
+      allowed-users = [ sudoers ];
+      trusted-users = [ sudoers ];
 
       experimental-features = [
         "lix-custom-sub-commands"
