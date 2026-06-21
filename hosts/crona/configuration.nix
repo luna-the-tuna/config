@@ -72,6 +72,7 @@
 
   environment.systemPackages = [
     pkgs.kdePackages.kdenlive
+    pkgs.pcsx2
     pkgs.qbittorrent
   ];
 
