@@ -20,7 +20,7 @@
     primary = true;
     firstName = "Luna";
     lastName = "Heyman";
-    email = "luna@toodeluna.net";
+    email = "contact@luna.fish";
   };
 
   soul.programs = {
