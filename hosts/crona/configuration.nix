@@ -1,7 +1,6 @@
 {
   self,
   inputs,
-  config,
   lib,
   pkgs,
   ...
@@ -30,12 +29,29 @@
   services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   services.openssh.enable = true;
+  services.blueman.enable = true;
 
   programs.git.enable = true;
   programs.neovim.enable = true;
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
+  };
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+
+    settings = {
+      General = {
+        Experimental = true;
+        FastConnectable = true;
+      };
+
+      Policy = {
+        AutoEnable = true;
+      };
+    };
   };
 
   programs.hyprland = {
