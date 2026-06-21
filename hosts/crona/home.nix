@@ -112,6 +112,12 @@ in
         name = user.fullName;
         email = user.email;
       };
+
+      alias = {
+        lga = "log --decorate --oneline --graph";
+        put = "push --set-upstream";
+        ui = "!${lib.getExe pkgs.lazygit}";
+      };
     };
   };
 
