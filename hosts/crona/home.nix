@@ -186,6 +186,7 @@ in
     vimAlias = true;
     vimdiffAlias = true;
     viAlias = true;
+    nixpkgs.source = inputs.nixpkgs;
 
     imports = [
       ./neovim.nix
