@@ -75,6 +75,7 @@
 
   environment.systemPackages = [
     pkgs.davinci-resolve
+    pkgs.gimp
     pkgs.kdePackages.kdenlive
     pkgs.pcsx2
     pkgs.qbittorrent
