@@ -8,6 +8,8 @@
     programs = {
       nixfmt.enable = true;
       prettier.enable = true;
+      shellcheck.enable = true;
+      shfmt.enable = true;
     };
   };
 }
