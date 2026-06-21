@@ -40,6 +40,11 @@ in
     colorScheme = "dark";
   };
 
+  qt = {
+    enable = true;
+    style.name = "kvantum";
+  };
+
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";
