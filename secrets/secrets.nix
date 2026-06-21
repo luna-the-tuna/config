@@ -21,4 +21,14 @@ in
     keys.crona.luna
     keys.crona.root
   ];
+
+  "tsubaki/users/luna.age".publicKeys = [
+    keys.tsubaki.luna
+    keys.tsubaki.root
+  ];
+
+  "tsubaki/users/root.age".publicKeys = [
+    keys.tsubaki.luna
+    keys.tsubaki.root
+  ];
 }

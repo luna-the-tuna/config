@@ -33,6 +33,12 @@ in
       path = "${self}/hosts/crona/configuration.nix";
     };
 
+    hosts.tsubaki = {
+      arch = "x86_64";
+      class = "nixos";
+      path = "${self}/hosts/tsubaki/configuration.nix";
+    };
+
     shared = {
       modules = [ "${self}/system" ];
       specialArgs = { inherit self inputs keys; };

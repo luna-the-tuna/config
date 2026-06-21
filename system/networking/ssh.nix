@@ -23,5 +23,10 @@ mkSystemModule {
       hostNames = [ "crona.local" ];
       publicKey = keys.crona.root;
     };
+
+    tsubaki = {
+      hostNames = [ "tsubaki.local" ];
+      publicKey = keys.tsubaki.root;
+    };
   };
 }

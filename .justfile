@@ -6,7 +6,7 @@ export NH_OS_FLAKE := justfile_directory()
 nh_command := if os() == "macos" { "darwin" } else { "os" }
 nh_output := "./result"
 
-[doc("Build the specified host configuration asdf")]
+[doc("Build the specified host configuration")]
 [group("systems")]
 build hostname=`hostname`:
     nh {{ nh_command }} build -H {{ hostname }} -o {{ nh_output }}
@@ -15,6 +15,13 @@ build hostname=`hostname`:
 [group("systems")]
 switch hostname=`hostname`:
     nh {{ nh_command }} switch -H {{ hostname }} -o {{ nh_output }}
+
+[doc("Deploy the specified system configuration")]
+[env("NH_ELEVATION_STRATEGY", "sudo")]
+[group("systems")]
+[linux]
+deploy hostname=`hostname`:
+    nh os switch -H {{ hostname }} --target-host {{ hostname }}
 
 [arg("scope", pattern="all|profile|user")]
 [doc("Run garbage collection on the current system")]
