@@ -7,6 +7,8 @@
     ./disk-configuration.nix
   ];
 
+  hardware.graphics.extraPackages = [ pkgs.rocmPackages.clr.icd ];
+
   soul.hardware = {
     amdgpu.enable = true;
     audio.enable = true;
@@ -72,6 +74,7 @@
   ];
 
   environment.systemPackages = [
+    pkgs.davinci-resolve
     pkgs.kdePackages.kdenlive
     pkgs.pcsx2
     pkgs.qbittorrent

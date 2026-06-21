@@ -326,6 +326,18 @@ in
             match.pin = false;
             match.xwayland = true;
           }
+          {
+            name = "fix-davinci-resolve-popups";
+            stay_focused = true;
+            border_size = 0;
+            rounding = 0;
+            opaque = true;
+            no_blur = true;
+            no_shadow = true;
+
+            match.class = "^(resolve)$";
+            match.float = true;
+          }
         ];
 
         animation = [
