@@ -11,8 +11,13 @@
       path = "${self}/hosts/crona/configuration.nix";
     };
 
-    shared.specialArgs = {
-      inherit self inputs;
+    shared = {
+      modules = [ "${self}/system" ];
+      specialArgs = { inherit self inputs; };
+    };
+
+    perClass = class: {
+      specialArgs = self.lib.modules.mkHelpers class;
     };
   };
 }

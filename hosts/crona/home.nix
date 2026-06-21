@@ -20,8 +20,6 @@ in
     inputs.zen-browser.homeModules.default
   ];
 
-  home.stateVersion = "26.11";
-
   _module.args = { inherit (palette) colors; };
 
   catppuccin = {
