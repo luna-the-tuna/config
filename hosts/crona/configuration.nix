@@ -34,6 +34,8 @@
   programs.git.enable = true;
   programs.neovim.enable = true;
 
+  fonts.enableDefaultPackages = false;
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
@@ -172,5 +174,33 @@
     extraSpecialArgs = { inherit self inputs; };
 
     users.luna = ./home.nix;
+  };
+
+  fonts.packages = [
+    pkgs.maple-mono.NF
+    pkgs.noto-fonts
+    pkgs.noto-fonts-cjk-sans
+    pkgs.noto-fonts-cjk-serif
+    pkgs.noto-fonts-color-emoji
+    pkgs.work-sans
+  ];
+
+  fonts.fontconfig = {
+    enable = true;
+
+    defaultFonts = {
+      monospace = [ "Maple Mono NF" ];
+      emoji = [ "Noto Color Emoji" ];
+
+      serif = [
+        "Noto Serif"
+        "Noto Cjk Serif"
+      ];
+
+      sansSerif = [
+        "Work Sans"
+        "Noto Cjk Sans"
+      ];
+    };
   };
 }
