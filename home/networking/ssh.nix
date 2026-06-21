@@ -5,7 +5,7 @@
 
     settings = {
       "Host blackstar" = {
-        HostName = "toodeluna.net";
+        HostName = "luna.fish";
         User = "luna";
       };
 

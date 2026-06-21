@@ -15,7 +15,7 @@ mkSystemModule {
     };
 
     blackstar = {
-      hostNames = [ "toodeluna.net" ];
+      hostNames = [ "luna.fish" ];
       publicKey = keys.blackstar.root;
     };
 

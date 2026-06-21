@@ -42,7 +42,7 @@
 
     server = {
       owner = "did:plc:5odpemgsnxty3zbaahu77rhv";
-      hostname = "knot.toodeluna.net";
+      hostname = "knot.luna.fish";
     };
   };
 
