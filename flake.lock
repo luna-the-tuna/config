@@ -247,6 +247,32 @@
         "type": "github"
       }
     },
+    "nixvim": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": [
+          "systems"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780646548,
+        "narHash": "sha256-Ckyl/l1XBmEwnaHcHD8PvBZk1uph0NqwbJ//CAvB7iE=",
+        "owner": "nix-community",
+        "repo": "nixvim",
+        "rev": "816a15282e58678dde831477964987d0262d4293",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
@@ -261,6 +287,7 @@
         "lix": "lix",
         "lix-module": "lix-module",
         "nixpkgs": "nixpkgs",
+        "nixvim": "nixvim",
         "systems": "systems",
         "treefmt": "treefmt",
         "zen-browser": "zen-browser"

@@ -3,10 +3,6 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } ./flake;
 
   inputs = {
-    easy-hosts.url = "github:tgirlcloud/easy-hosts";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    systems.url = "github:nix-systems/default";
-
     catppuccin = {
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,6 +16,10 @@
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    easy-hosts = {
+      url = "github:tgirlcloud/easy-hosts";
     };
 
     extersia-pkgs = {
@@ -57,6 +57,21 @@
       inputs.flake-utils.follows = "flake-utils";
       inputs.lix.follows = "lix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.systems.follows = "systems";
+    };
+
+    systems = {
+      url = "github:nix-systems/default";
     };
 
     treefmt = {

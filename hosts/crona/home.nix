@@ -16,6 +16,7 @@ in
 {
   imports = [
     inputs.catppuccin.homeModules.default
+    inputs.nixvim.homeModules.default
     inputs.zen-browser.homeModules.default
   ];
 
@@ -154,6 +155,25 @@ in
         };
       };
     };
+  };
+
+  programs.nixvim = {
+    enable = true;
+    defaultEditor = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    viAlias = true;
+    useGlobalPkgs = true;
+
+    imports = [
+      ./neovim.nix
+      {
+        _module.args = {
+          inherit osConfig;
+          homeConfig = config;
+        };
+      }
+    ];
   };
 
   wayland.windowManager.hyprland =
