@@ -70,6 +70,7 @@
       html.enable = true;
       lua_ls.enable = true;
       nixd.enable = true;
+      pylsp.enable = true;
       svelte.enable = true;
       tailwindcss.enable = true;
       ts_ls.enable = true;
@@ -117,6 +118,7 @@
       just = [ "just" ];
       lua = [ "stylua" ];
       nix = [ "nixfmt" ];
+      python = [ "black" ];
       qml = [ "qmlformat" ];
       rust = [ "rustfmt" ];
       sh = [ "shfmt" ];
@@ -131,6 +133,7 @@
     ];
 
     settings.formatters = {
+      black.command = lib.getExe pkgs.black;
       just.command = lib.getExe pkgs.just;
       nixfmt.command = lib.getExe pkgs.nixfmt;
       prettierd.command = lib.getExe pkgs.prettierd;
@@ -168,6 +171,7 @@
       lua
       markdown
       nix
+      python
       qmljs
       rust
       svelte
