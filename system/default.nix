@@ -4,6 +4,7 @@
     ./hardware
     ./lib
     ./networking
+    ./programs
     ./settings
   ];
 }

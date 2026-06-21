@@ -21,13 +21,8 @@
     email = "luna@toodeluna.net";
   };
 
-  programs.obs-studio = {
-    enable = true;
-
-    plugins = [
-      pkgs.obs-studio-plugins.obs-vaapi
-      pkgs.obs-studio-plugins.obs-pipewire-audio-capture
-    ];
+  soul.programs = {
+    obs.enable = true;
   };
 
   programs.git.enable = true;
