@@ -21,6 +21,15 @@
     email = "luna@toodeluna.net";
   };
 
+  programs.obs-studio = {
+    enable = true;
+
+    plugins = [
+      pkgs.obs-studio-plugins.obs-vaapi
+      pkgs.obs-studio-plugins.obs-pipewire-audio-capture
+    ];
+  };
+
   programs.git.enable = true;
 
   fonts.enableDefaultPackages = false;
@@ -67,6 +76,7 @@
   ];
 
   environment.systemPackages = [
+    pkgs.kdePackages.kdenlive
     pkgs.qbittorrent
   ];
 
