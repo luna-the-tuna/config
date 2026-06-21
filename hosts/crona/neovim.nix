@@ -246,5 +246,15 @@
       action = lib.nixvim.mkRaw ''require("telescope.builtin").find_files'';
       options.desc = "Find files";
     }
+    {
+      mode = "n";
+      key = "<leader>ff";
+      action = lib.nixvim.mkRaw ''require("telescope.builtin").live_grep'';
+      options.desc = "Find in files";
+    }
+  ];
+
+  extraPackages = [
+    pkgs.ripgrep
   ];
 }
