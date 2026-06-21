@@ -38,6 +38,8 @@ in
     colorScheme = "dark";
   };
 
+  programs.vesktop.enable = true;
+
   programs.git = {
     enable = true;
 
