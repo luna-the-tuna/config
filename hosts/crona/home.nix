@@ -5,6 +5,7 @@
   lib,
   osConfig,
   pkgs,
+  self,
   ...
 }:
 let
@@ -191,6 +192,16 @@ in
     ];
   };
 
+  programs.quickshell = {
+    enable = true;
+    activeConfig = "default";
+    configs.default = "${self}/quickshell";
+  };
+
+  xdg.configFile."quickshell.json".text = builtins.toJSON {
+    wallpaper = "${self}/assets/wallpapers/catppuccin-blossoms.png";
+  };
+
   wayland.windowManager.hyprland =
     let
       mkBind = keys: command: {
@@ -222,6 +233,13 @@ in
             inherit points;
             type = "bezier";
           }
+        ];
+      };
+
+      mkHandler = event: handler: {
+        _args = [
+          event
+          (lib.generators.mkLuaInline handler)
         ];
       };
     in
@@ -451,11 +469,17 @@ in
           ])
         ];
 
-        on._args = [
-          "hyprland.start"
-          (lib.generators.mkLuaInline ''
+        on = [
+          (mkHandler "hyprland.start" ''
             function()
               hl.exec_cmd("${lib.getExe pkgs.xwayland-satellite} :2")
+            end
+          '')
+
+          (mkHandler "config.reloaded" ''
+            function()
+              hl.exec_cmd("${lib.getExe pkgs.quickshell} kill")
+              hl.exec_cmd("${lib.getExe pkgs.quickshell}")
             end
           '')
         ];

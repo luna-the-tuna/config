@@ -11,6 +11,7 @@
           pkgs.just
           pkgs.lix
           pkgs.nh
+          pkgs.quickshell
         ];
       };
     };

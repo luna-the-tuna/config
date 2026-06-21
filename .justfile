@@ -33,3 +33,9 @@ edit-secret path:
 [working-directory("./secrets")]
 show-secret path:
     agenix -d {{ path }}
+
+[doc("Replace the current Quickshell instance with the one in this repo")]
+[group("development")]
+quickshell:
+    quickshell kill || true
+    quickshell -p ./quickshell
