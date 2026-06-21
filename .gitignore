@@ -1,0 +1,17 @@
+# Editor files
+/.vscode
+
+# Output files
+/result
+/result-*
+
+# Environment files
+/*.env
+/.direnv
+
+# Temporary files
+/temp
+/tmp
+
+# System files
+.DS_Store
