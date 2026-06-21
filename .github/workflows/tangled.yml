@@ -1,0 +1,19 @@
+name: tangled
+run-name: Pushing repository to Tangled
+on: push
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  tangled:
+    name: Push repository to Tangled
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: gwennlbh/to-tangled@v0.6
+        with:
+          knot: knot.luna.fish
+          repo: luna.fish/config
+          ssh-key: ${{ secrets.TANGLED_SSH_KEY }}
