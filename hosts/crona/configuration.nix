@@ -64,6 +64,10 @@
     pkgs.work-sans
   ];
 
+  environment.systemPackages = [
+    pkgs.qbittorrent
+  ];
+
   fonts.fontconfig = {
     enable = true;
 

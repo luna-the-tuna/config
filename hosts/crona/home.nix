@@ -31,6 +31,7 @@ in
       accent
       ;
     sources = { inherit (osConfig.catppuccin.sources) palette; };
+    mpv.enable = false;
   };
 
   gtk = {
@@ -104,6 +105,25 @@ in
         name = user.fullName;
         email = user.email;
       };
+    };
+  };
+
+  programs.mpv = {
+    enable = true;
+
+    scripts = [
+      pkgs.mpvScripts.modernz
+      pkgs.mpvScripts.thumbfast
+    ];
+
+    config = {
+      ao = "pulse";
+      osc = "no";
+      target-colorspace-hint = "no";
+    };
+
+    scriptOpts.modernz = {
+      icon_theme = "material";
     };
   };
 
