@@ -15,6 +15,8 @@ let
   existingGroups = lib.mapAttrsToList (name: group: group.name) config.users.groups;
   doesGroupExist = name: builtins.elem name existingGroups;
 
+  getUserPasswordFile = user: "${self}/secrets/${config.networking.hostName}/users/${user.name}.age";
+
   groups = builtins.filter doesGroupExist [
     "audio"
     "gamemode"
@@ -38,15 +40,24 @@ mkSystemModule {
     users.knownUsers = map (user: user.name) cfg;
   };
 
-  shared.config.users.users = self.lib.attrsets.imapAttrs1 (index: name: user: {
+  nixos.config = {
+    users.mutableUsers = false;
+  };
+
+  shared.config.users.users = lib.mapAttrs (name: user: {
     description = user.fullName;
     shell = pkgs.bashInteractive;
   }) cfg;
 
-  nixos.config.users.users = self.lib.attrsets.imapAttrs1 (index: name: user: {
+  nixos.config.users.users = lib.mapAttrs (name: user: {
     isNormalUser = true;
     extraGroups = groups;
+    hashedPasswordFile = config.age.secrets."users/${user.name}".path;
   }) cfg;
+
+  nixos.config.age.secrets = lib.mapAttrs' (
+    name: user: lib.nameValuePair "users/${user.name}" { file = getUserPasswordFile user; }
+  ) cfg;
 
   darwin.config.users.users = self.lib.attrset.imapAttrs1 (index: name: user: {
     uid = 500 + index;

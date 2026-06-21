@@ -3,6 +3,14 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } ./flake;
 
   inputs = {
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.darwin.follows = "darwin";
+      inputs.home-manager.follows = "home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.systems.follows = "systems";
+    };
+
     catppuccin = {
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -11,6 +19,11 @@
     catppuccin-palette = {
       url = "github:catppuccin/palette";
       flake = false;
+    };
+
+    darwin = {
+      url = "github:nix-darwin/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     disko = {
