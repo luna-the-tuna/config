@@ -18,6 +18,7 @@ in
   imports = [
     inputs.catppuccin.homeModules.default
     inputs.nixvim.homeModules.default
+    inputs.spicetify.homeManagerModules.default
     inputs.zen-browser.homeModules.default
   ];
 
@@ -55,6 +56,12 @@ in
   programs.bat.enable = true;
   programs.yazi.enable = true;
   programs.nix-your-shell.enable = true;
+
+  programs.spicetify = {
+    enable = true;
+    theme = pkgs.spicePkgs.themes.catppuccin;
+    colorScheme = config.catppuccin.flavor;
+  };
 
   programs.direnv = {
     enable = true;

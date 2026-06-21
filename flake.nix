@@ -83,6 +83,12 @@
       inputs.systems.follows = "systems";
     };
 
+    spicetify = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.systems.follows = "systems";
+    };
+
     systems = {
       url = "github:nix-systems/default";
     };

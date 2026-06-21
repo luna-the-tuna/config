@@ -6,6 +6,7 @@
       { inputs', ... }:
       {
         zen-browser = inputs'.zen-browser.packages.default;
+        spicePkgs = inputs'.spicetify.legacyPackages;
       }
     ));
 }
