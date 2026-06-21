@@ -7,8 +7,6 @@
     ./disk-configuration.nix
   ];
 
-  hardware.graphics.extraPackages = [ pkgs.rocmPackages.clr.icd ];
-
   soul.hardware = {
     amdgpu.enable = true;
     audio.enable = true;
@@ -25,6 +23,7 @@
 
   soul.programs = {
     obs.enable = true;
+    resolve.enable = true;
   };
 
   programs.git.enable = true;
@@ -74,9 +73,7 @@
   ];
 
   environment.systemPackages = [
-    pkgs.davinci-resolve
     pkgs.gimp
-    pkgs.kdePackages.kdenlive
     pkgs.pcsx2
     pkgs.qbittorrent
   ];
