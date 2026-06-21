@@ -42,11 +42,6 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
-  users.users.luna = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-  };
-
   catppuccin = {
     autoEnable = true;
     enable = true;
