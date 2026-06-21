@@ -474,6 +474,7 @@ in
           (mkHandler "hyprland.start" ''
             function()
               hl.exec_cmd("${lib.getExe pkgs.xwayland-satellite} :2")
+              hl.exec_cmd("${lib.getExe pkgs.quickshell}")
             end
           '')
 
