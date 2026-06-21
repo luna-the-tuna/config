@@ -5,7 +5,6 @@
   lib,
   osConfig,
   pkgs,
-  user,
   ...
 }:
 let
@@ -91,33 +90,6 @@ in
 
       tab_bar_style = "powerline";
       tab_powerline_style = "angled";
-    };
-  };
-
-  programs.git = {
-    enable = true;
-
-    signing = {
-      signByDefault = true;
-      format = "ssh";
-      key = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
-    };
-
-    settings = {
-      core.ignorecase = true;
-      pull.rebase = true;
-      init.defaultBranch = "main";
-
-      user = {
-        name = user.fullName;
-        email = user.email;
-      };
-
-      alias = {
-        lga = "log --decorate --oneline --graph";
-        put = "push --set-upstream";
-        ui = "!${lib.getExe pkgs.lazygit}";
-      };
     };
   };
 
