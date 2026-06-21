@@ -10,7 +10,9 @@
       options = {
         primary = lib.mkOption {
           default = false;
+          defaultText = "<name>";
           description = "Whether this is the primary user on the system.";
+          readOnly = true;
           type = lib.types.bool;
         };
 
@@ -36,6 +38,12 @@
           defaultText = "\${firstName} \${lastName}";
           description = "The full name of the user.";
           example = "Maka Albarn";
+          type = lib.types.str;
+        };
+
+        email = lib.mkOption {
+          description = "The email address of the user.";
+          example = "maka.albarn@shibusen.org";
           type = lib.types.str;
         };
       };

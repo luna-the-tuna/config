@@ -19,6 +19,7 @@
     primary = true;
     firstName = "Luna";
     lastName = "Heyman";
+    email = "luna@toodeluna.net";
   };
 
   programs.git.enable = true;

@@ -64,4 +64,8 @@ mkSystemModule {
     createHome = true;
     home = "/Users/${user.name}";
   }) cfg;
+
+  shared.config.home-manager.users = lib.mapAttrs (name: user: {
+    _module.args = { inherit user; };
+  }) cfg;
 }

@@ -1,10 +1,11 @@
 {
-  inputs,
+  colors,
   config,
+  inputs,
   lib,
   osConfig,
   pkgs,
-  colors,
+  user,
   ...
 }:
 let
@@ -94,8 +95,8 @@ in
       init.defaultBranch = "main";
 
       user = {
-        name = "Luna Heyman";
-        email = "luna@toodeluna.net";
+        name = user.fullName;
+        email = user.email;
       };
     };
   };
