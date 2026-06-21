@@ -7,6 +7,7 @@
 }:
 {
   imports = [
+    inputs.catppuccin.nixosModules.default
     inputs.disko.nixosModules.default
     inputs.home-manager.nixosModules.default
 
@@ -32,6 +33,11 @@
   programs.git.enable = true;
   programs.neovim.enable = true;
 
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = false;
+  };
+
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -43,6 +49,16 @@
   users.users.luna = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+  };
+
+  catppuccin = {
+    autoEnable = true;
+    enable = true;
+    flavor = "mocha";
+    accent = "mauve";
+
+    sources.palette = inputs.catppuccin-palette;
+    plymouth.enable = false;
   };
 
   nix = {
@@ -77,7 +93,9 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    sharedModules = [ inputs.catppuccin.homeModules.default ];
     backupFileExtension = "home-manager-backup";
+
     users.luna = ./home.nix;
   };
 }
