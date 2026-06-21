@@ -16,6 +16,12 @@ build hostname=`hostname`:
 switch hostname=`hostname`:
     nh {{ nh_command }} switch -H {{ hostname }} -o {{ nh_output }}
 
+[arg("scope", pattern="all|profile|user")]
+[doc("Run garbage collection on the current system")]
+[group("systems")]
+clean scope="all":
+    nh clean all
+
 [doc("Edit the specified secret file")]
 [group("secrets")]
 [working-directory("./secrets")]
