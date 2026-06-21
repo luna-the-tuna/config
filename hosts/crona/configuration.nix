@@ -1,4 +1,5 @@
 {
+  self,
   inputs,
   config,
   lib,
@@ -93,8 +94,8 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    sharedModules = [ inputs.catppuccin.homeModules.default ];
     backupFileExtension = "home-manager-backup";
+    extraSpecialArgs = { inherit self inputs; };
 
     users.luna = ./home.nix;
   };

@@ -1,12 +1,27 @@
 {
+  inputs,
   config,
   lib,
   osConfig,
   pkgs,
+  colors,
   ...
 }:
+let
+  palette =
+    "${config.catppuccin.sources.palette}/palette.json"
+    |> lib.importJSON
+    |> lib.getAttr config.catppuccin.flavor;
+in
 {
+  imports = [
+    inputs.catppuccin.homeModules.default
+    inputs.zen-browser.homeModules.default
+  ];
+
   home.stateVersion = "26.11";
+
+  _module.args = { inherit (palette) colors; };
 
   catppuccin = {
     inherit (osConfig.catppuccin)
@@ -16,6 +31,11 @@
       accent
       ;
     sources = { inherit (osConfig.catppuccin.sources) palette; };
+  };
+
+  gtk = {
+    enable = true;
+    colorScheme = "dark";
   };
 
   programs.git = {
@@ -35,6 +55,67 @@
       user = {
         name = "Luna Heyman";
         email = "luna@toodeluna.net";
+      };
+    };
+  };
+
+  programs.zen-browser = {
+    enable = true;
+    setAsDefaultBrowser = true;
+
+    profiles.default = {
+      name = "Default";
+      isDefault = true;
+      containersForce = true;
+      spacesForce = true;
+      pinsForce = true;
+
+      settings = {
+        "extensions.autoDisableScopes" = false;
+        "general.autoScroll" = true;
+        "middlemouse.paste" = false;
+        "zen.urlbar.replace-newtab" = true;
+        "zen.view.use-single-toolbar" = false;
+        "zen.welcome-screen.seen" = true;
+      };
+
+      search = {
+        force = true;
+        default = "ddg";
+      };
+
+      extensions = {
+        force = true;
+
+        packages = with pkgs.firefox-addons; [
+          catppuccin-web-file-icons
+          proton-pass
+          return-youtube-dislikes
+          shinigami-eyes
+          sponsorblock
+          stylus
+          ublock-origin
+          yomitan
+          youtube-shorts-block
+        ];
+      };
+
+      containers.default = {
+        color = "purple";
+        icon = "fingerprint";
+        id = 1;
+      };
+
+      spaces.default = {
+        id = "13a3da61-48c4-4d49-8166-174419b311a7";
+        position = 1000;
+        container = config.programs.zen-browser.profiles.default.containers.default.id;
+
+        theme.colors = lib.singleton {
+          red = colors.base.rgb.r;
+          green = colors.base.rgb.g;
+          blue = colors.base.rgb.b;
+        };
       };
     };
   };
@@ -219,6 +300,7 @@
         bind = [
           (mkBind "SUPER + RETURN" ''hl.dsp.exec_cmd("${lib.getExe pkgs.kitty}")'')
           (mkBind "SUPER + SPACE" ''hl.dsp.exec_cmd("${lib.getExe pkgs.rofi} -show drun")'')
+          (mkBind "SUPER + B" ''hl.dsp.exec_cmd("${lib.getExe pkgs.zen-browser}")'')
           (mkBind "SUPER + S" ''hl.dsp.exec_cmd("${lib.getExe pkgs.hyprshot} --mode region --clipboard-only")'')
           (mkBind "SUPER + C" ''hl.dsp.exec_cmd("${lib.getExe pkgs.hyprpicker} | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}")'')
 

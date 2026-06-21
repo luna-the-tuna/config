@@ -6,7 +6,9 @@ let
   };
 
   overlays = [
+    inputs.firefox-addons.overlays.default
     inputs.lix-module.overlays.default
+    inputs.self.overlays.default
   ];
 in
 {
