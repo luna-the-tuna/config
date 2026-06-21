@@ -38,7 +38,41 @@ in
     colorScheme = "dark";
   };
 
+  home.shellAliases = {
+    q = "exit";
+    cat = lib.getExe pkgs.bat;
+    lf = lib.getExe pkgs.yazi;
+  };
+
   programs.vesktop.enable = true;
+  programs.bat.enable = true;
+  programs.yazi.enable = true;
+
+  programs.nushell = {
+    enable = true;
+    shellAliases = config.home.shellAliases;
+
+    settings = {
+      show_banner = false;
+    };
+  };
+
+  programs.bash = {
+    enable = true;
+    initExtra = lib.mkOrder 2000 ''exec "${lib.getExe pkgs.nushell}"'';
+  };
+
+  programs.kitty = {
+    enable = true;
+
+    settings = {
+      background_opacity = 0.95;
+      confirm_os_window_close = 0;
+
+      tab_bar_style = "powerline";
+      tab_powerline_style = "angled";
+    };
+  };
 
   programs.git = {
     enable = true;
