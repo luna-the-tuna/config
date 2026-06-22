@@ -5,6 +5,7 @@
     ./lib
     ./networking
     ./programs
+    ./scripts
     ./settings
   ];
 }

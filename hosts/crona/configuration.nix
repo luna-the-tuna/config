@@ -26,6 +26,10 @@
     resolve.enable = true;
   };
 
+  soul.scripts = {
+    tomov.enable = true;
+  };
+
   programs.git.enable = true;
 
   fonts.enableDefaultPackages = false;
