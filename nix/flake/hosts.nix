@@ -8,11 +8,13 @@ let
   modules.nixos = [
     inputs.disko.nixosModules.default
     inputs.extersia-pkgs.nixosModules.default
+    inputs.home-manager.nixosModules.default
     inputs.nixpkgs.nixosModules.readOnlyPkgs
   ];
 
   modules.darwin = [
     inputs.extersia-pkgs.darwinModules.default
+    inputs.home-manager.darwinModules.default
     inputs.nixpkgs.nixosModules.readOnlyPkgs
   ];
 in

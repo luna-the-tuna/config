@@ -25,4 +25,11 @@
     description = "Luna Heyman";
     extraGroups = [ "wheel" ];
   };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "home-manager-backup";
+    users.luna = ./home.nix;
+  };
 }
