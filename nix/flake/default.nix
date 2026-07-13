@@ -6,6 +6,7 @@
     ./args
     ./checks
 
+    ./devshell.nix
     ./systems.nix
     ./treefmt.nix
   ];

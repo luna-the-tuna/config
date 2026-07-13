@@ -10,5 +10,9 @@
 /temp
 /tmp
 
+# Environment files
+/.direnv
+/*.env
+
 # System files
 .DS_Store

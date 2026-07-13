@@ -7,6 +7,7 @@ let
 
   overlays = [
     inputs.extersia-pkgs.overlays.default
+    inputs.lix-module.overlays.default
   ];
 in
 {

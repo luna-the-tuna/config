@@ -1,0 +1,18 @@
+{ lib, ... }:
+{
+  perSystem = { pkgs, ... }: {
+    devShells.default = pkgs.mkShell {
+      name = "config-shell";
+
+      packages = [
+        pkgs.lix
+      ];
+
+      meta = {
+        description = "The development environment for this configuration";
+        maintainers = [ lib.maintainers.luna-the-tuna ];
+        platforms = lib.platforms.all;
+      };
+    };
+  };
+}
