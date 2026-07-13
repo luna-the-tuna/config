@@ -11,6 +11,7 @@ in
       shellHook = script;
 
       packages = [
+        pkgs.agenix
         pkgs.cocogitto
         pkgs.just
         pkgs.lix

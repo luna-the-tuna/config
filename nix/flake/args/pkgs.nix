@@ -6,6 +6,8 @@ let
   };
 
   overlays = [
+    inputs.agenix.overlays.default
+    inputs.darwin.overlays.default
     inputs.extersia-pkgs.overlays.default
     inputs.lix-module.overlays.default
   ];

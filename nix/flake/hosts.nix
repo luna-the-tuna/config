@@ -1,11 +1,13 @@
 {
   inputs,
-  self,
+  keys,
   lib,
+  self,
   ...
 }:
 let
   modules.nixos = [
+    inputs.agenix.nixosModules.default
     inputs.disko.nixosModules.default
     inputs.extersia-pkgs.nixosModules.default
     inputs.home-manager.nixosModules.default
@@ -13,6 +15,7 @@ let
   ];
 
   modules.darwin = [
+    inputs.agenix.darwinModules.default
     inputs.extersia-pkgs.darwinModules.default
     inputs.home-manager.darwinModules.default
     inputs.nixpkgs.nixosModules.readOnlyPkgs
@@ -26,6 +29,10 @@ in
       class = "nixos";
       arch = "x86_64";
       path = "${self}/nix/hosts/crona";
+    };
+
+    shared = {
+      specialArgs = { inherit keys; };
     };
 
     perClass = class: {

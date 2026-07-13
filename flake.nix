@@ -4,6 +4,19 @@
 
   inputs = {
     # keep-sorted start block=yes newline_separated=yes
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.darwin.follows = "darwin";
+      inputs.home-manager.follows = "home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.systems.follows = "systems";
+    };
+
+    darwin = {
+      url = "github:nix-darwin/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
