@@ -63,7 +63,7 @@
     };
 
     systems = {
-      url = "github:nix-systems/default";
+      url = "github:nix-systems/triplet";
     };
 
     treefmt = {

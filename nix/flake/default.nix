@@ -6,9 +6,11 @@
 
     ./args
     ./checks
+    ./overlays
 
     ./devshell.nix
     ./hosts.nix
+    ./packages.nix
     ./systems.nix
     ./treefmt.nix
   ];

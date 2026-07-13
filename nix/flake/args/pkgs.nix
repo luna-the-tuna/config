@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ self, inputs, ... }:
 let
   config = {
     allowAliases = false;
@@ -6,6 +6,7 @@ let
   };
 
   overlays = [
+    self.overlays.default
     inputs.agenix.overlays.default
     inputs.darwin.overlays.default
     inputs.extersia-pkgs.overlays.default
