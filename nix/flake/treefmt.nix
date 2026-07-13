@@ -8,6 +8,7 @@
       prettier.enable = true;
       shellcheck.enable = true;
       shfmt.enable = true;
+      toml-sort.enable = true;
     };
   };
 }

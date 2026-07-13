@@ -1,10 +1,17 @@
 { lib, ... }:
+let
+  script = ''
+    cog install-hook --all --overwrite
+  '';
+in
 {
   perSystem = { pkgs, ... }: {
     devShells.default = pkgs.mkShell {
       name = "config-shell";
+      shellHook = script;
 
       packages = [
+        pkgs.cocogitto
         pkgs.lix
       ];
 

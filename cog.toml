@@ -1,0 +1,12 @@
+ignore_merge_commits = true
+
+[changelog]
+path = "CHANGELOG.md"
+template = "remote"
+remote = "github"
+owner = "luna-the-tuna"
+repository = "config"
+
+[git_hooks]
+commit-msg.path = "./scripts/git-hooks/commit-msg.sh"
+pre-commit.path = "./scripts/git-hooks/pre-commit.sh"
