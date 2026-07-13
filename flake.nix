@@ -4,6 +4,15 @@
 
   inputs = {
     # keep-sorted start block=yes newline_separated=yes
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    easy-hosts = {
+      url = "github:tgirlcloud/easy-hosts";
+    };
+
     extersia-pkgs = {
       url = "github:extersia-org/pkgs";
       inputs.nixpkgs.follows = "nixpkgs";

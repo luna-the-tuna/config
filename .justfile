@@ -1,0 +1,18 @@
+export NH_FLAKE := justfile_directory()
+export NH_OS_FLAKE := justfile_directory()
+export NH_DARWIN_FLAKE := justfile_directory()
+
+hostname := `hostname`
+
+nh_output := "./result"
+nh_builder := if os() == "macos" { "darwin" } else { "os" }
+
+[doc("Build the specified host configuration")]
+[group("systems")]
+build hostname=hostname:
+    nh {{ nh_builder }} build -H {{ hostname }} -o {{ nh_output }} --show-trace
+
+[doc("Switch to the specified host configuration")]
+[group("systems")]
+switch hostname=hostname:
+    nh {{ nh_builder }} switch -H {{ hostname }} -o {{ nh_output }} --show-trace

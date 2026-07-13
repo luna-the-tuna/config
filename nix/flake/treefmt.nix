@@ -3,6 +3,7 @@
     projectRootFile = "flake.nix";
 
     programs = {
+      just.enable = true;
       keep-sorted.enable = true;
       nixfmt.enable = true;
       prettier.enable = true;

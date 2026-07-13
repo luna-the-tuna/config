@@ -12,7 +12,9 @@ in
 
       packages = [
         pkgs.cocogitto
+        pkgs.just
         pkgs.lix
+        pkgs.nh
       ];
 
       meta = {
