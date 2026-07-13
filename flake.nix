@@ -4,6 +4,11 @@
 
   inputs = {
     # keep-sorted start block=yes newline_separated=yes
+    extersia-pkgs = {
+      url = "github:extersia-org/pkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";

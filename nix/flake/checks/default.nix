@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./locker.nix
+  ];
+}

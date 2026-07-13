@@ -4,9 +4,13 @@ let
     allowAliases = false;
     allowUnfree = true;
   };
+
+  overlays = [
+    inputs.extersia-pkgs.overlays.default
+  ];
 in
 {
   perSystem = { system, ... }: {
-    _module.args.pkgs = import inputs.nixpkgs { inherit system config; };
+    _module.args.pkgs = import inputs.nixpkgs { inherit system config overlays; };
   };
 }
