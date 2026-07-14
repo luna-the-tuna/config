@@ -302,6 +302,7 @@ in
       (mkKeyBind "SUPER + B" ''hl.dsp.exec_cmd("${lib.getExe pkgs.zen-browser}")'')
       (mkKeyBind "SUPER + S" ''hl.dsp.exec_cmd("${lib.getExe pkgs.hyprshot} --mode region --clipboard-only")'')
       (mkKeyBind "SUPER + C" ''hl.dsp.exec_cmd("${lib.getExe pkgs.hyprpicker} | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}")'')
+      (mkKeyBind "SUPER + E" ''hl.dsp.exec_cmd("${lib.getExe pkgs.thunar}")'')
 
       (mkKeyBind "SUPER + Q" "hl.dsp.window.close()")
       (mkKeyBind "SUPER + SHIFT +Q" "hl.dsp.exit()")

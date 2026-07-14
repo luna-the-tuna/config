@@ -100,6 +100,7 @@ in
 
   programs = {
     gamemode.enable = true;
+    thunar.enable = true;
   };
 
   users = {
