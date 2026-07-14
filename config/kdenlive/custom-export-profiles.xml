@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<profiles version="1">
+  <profile args="ab=%audiobitrate+'k' acodec=aac bf=2 crf=%quality f=mp4 g=120 movflags=+faststart progressive=1 vcodec=libx264" category="custom" defaultaudiobitrate="160" defaultaudioquality="1.05" defaultbitrate="0" defaultquality="18" defaultspeedindex="6" extension="mp4" name="YouTube" qualities="15,45" speeds="preset=veryslow;preset=slower;preset=slow;preset=medium;preset=fast;preset=faster;preset=veryfast;preset=superfast;preset=ultrafast"/>
+</profiles>

@@ -196,6 +196,15 @@ in
     localNetworkGameTransfers.openFirewall = true;
   };
 
+  programs.obs-studio = {
+    enable = true;
+
+    plugins = [
+      pkgs.obs-studio-plugins.obs-pipewire-audio-capture
+      pkgs.obs-studio-plugins.obs-vaapi
+    ];
+  };
+
   environment.variables = {
     NIXOS_OZONE_WL = "1";
   };
@@ -205,6 +214,8 @@ in
   ];
 
   environment.systemPackages = [
+    pkgs.gimp
+    pkgs.kdePackages.kdenlive
     pkgs.qpwgraph
     pkgs.wiremix
   ];

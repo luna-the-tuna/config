@@ -224,6 +224,10 @@ in
     videos = "${homeDirectory}/videos";
   };
 
+  xdg.dataFile."kdenlive/export/customprofiles.xml" = {
+    source = "${self}/config/kdenlive/custom-export-profiles.xml";
+  };
+
   wayland.windowManager.hyprland = with self.lib.hypr; {
     enable = true;
     package = osConfig.programs.hyprland.package;

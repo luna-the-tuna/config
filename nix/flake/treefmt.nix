@@ -10,6 +10,7 @@
       shellcheck.enable = true;
       shfmt.enable = true;
       toml-sort.enable = true;
+      xmllint.enable = true;
     };
   };
 }
