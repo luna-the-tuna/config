@@ -134,6 +134,8 @@ in
 
     userSettings = {
       vim_mode = true;
+      ui_font_family = "Work Sans";
+      buffer_font_family = "Maple Mono NF";
     };
 
     extensions = [
