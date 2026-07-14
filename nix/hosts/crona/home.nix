@@ -16,6 +16,12 @@ in
   programs = {
     carapace.enable = true;
     home-manager.enable = true;
+    nix-your-shell.enable = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
 
   programs.nushell = {
