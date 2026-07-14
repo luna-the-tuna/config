@@ -49,11 +49,19 @@ in
     sources.palette = inputs.catppuccin-palette;
   };
 
+  home.shellAliases = {
+    cat = lib.getExe pkgs.bat;
+    lf = lib.getExe pkgs.yazi;
+  };
+
   programs = {
+    bat.enable = true;
     carapace.enable = true;
     home-manager.enable = true;
+    lazygit.enable = true;
     nix-your-shell.enable = true;
     vesktop.enable = true;
+    yazi.enable = true;
   };
 
   programs.direnv = {
@@ -62,6 +70,7 @@ in
   };
 
   programs.nushell = {
+    inherit (config.home) shellAliases;
     enable = true;
     settings.show_banner = false;
   };
@@ -69,6 +78,18 @@ in
   programs.bash = {
     enable = true;
     initExtra = lib.mkOrder 2000 "exec ${lib.getExe pkgs.nushell}";
+  };
+
+  programs.kitty = {
+    enable = true;
+
+    settings = {
+      background_opacity = 0.95;
+      confirm_os_window_close = 0;
+
+      tab_bar_style = "powerline";
+      tab_powerline_style = "angled";
+    };
   };
 
   programs.spicetify = {
