@@ -7,9 +7,12 @@ let
 
   overlays = [
     self.overlays.default
+    self.overlays.zen
+
     inputs.agenix.overlays.default
     inputs.darwin.overlays.default
     inputs.extersia-pkgs.overlays.default
+    inputs.firefox-addons.overlays.default
     inputs.lix-module.overlays.default
   ];
 in

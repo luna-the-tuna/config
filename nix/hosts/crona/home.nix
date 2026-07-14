@@ -1,4 +1,5 @@
 {
+  colors,
   config,
   inputs,
   lib,
@@ -26,6 +27,16 @@ in
     name = "Bibata-Modern-Ice";
     size = 24;
     package = pkgs.bibata-cursors;
+  };
+
+  gtk = {
+    enable = true;
+    colorScheme = "dark";
+  };
+
+  qt = {
+    enable = true;
+    style.name = "kvantum";
   };
 
   catppuccin = {
@@ -57,6 +68,67 @@ in
   programs.bash = {
     enable = true;
     initExtra = lib.mkOrder 2000 "exec ${lib.getExe pkgs.nushell}";
+  };
+
+  programs.zen-browser = {
+    enable = true;
+    setAsDefaultBrowser = true;
+
+    profiles.default = {
+      name = "Default";
+      isDefault = true;
+      containersForce = true;
+      spacesForce = true;
+      pinsForce = true;
+
+      settings = {
+        "extensions.autoDisableScopes" = false;
+        "general.autoScroll" = true;
+        "middlemouse.paste" = false;
+        "zen.urlbar.replace-newtab" = true;
+        "zen.view.use-single-toolbar" = false;
+        "zen.welcome-screen.seen" = true;
+      };
+
+      search = {
+        force = true;
+        default = "ddg";
+      };
+
+      extensions = {
+        force = true;
+
+        packages = with pkgs.firefox-addons; [
+          catppuccin-web-file-icons
+          proton-pass
+          return-youtube-dislikes
+          shinigami-eyes
+          sponsorblock
+          stylus
+          ublock-origin
+          yomitan
+          youtube-shorts-block
+        ];
+      };
+
+      containers.default = {
+        color = "purple";
+        icon = "fingerprint";
+        id = 1;
+      };
+
+      spaces.default = {
+        id = "13a3da61-48c4-4d49-8166-174419b311a7";
+        position = 1000;
+        container = config.programs.zen-browser.profiles.default.containers.default.id;
+
+        theme.colors = lib.singleton {
+          red = colors.base.rgb.r;
+          green = colors.base.rgb.g;
+          blue = colors.base.rgb.b;
+        };
+      };
+    };
   };
 
   xdg.userDirs = {
@@ -220,6 +292,7 @@ in
     settings.bind = [
       (mkKeyBind "SUPER + RETURN" ''hl.dsp.exec_cmd("${lib.getExe pkgs.kitty}")'')
       (mkKeyBind "SUPER + SPACE" ''hl.dsp.exec_cmd("${lib.getExe pkgs.rofi} -show drun")'')
+      (mkKeyBind "SUPER + B" ''hl.dsp.exec_cmd("${lib.getExe pkgs.zen-browser}")'')
       (mkKeyBind "SUPER + S" ''hl.dsp.exec_cmd("${lib.getExe pkgs.hyprshot} --mode region --clipboard-only")'')
       (mkKeyBind "SUPER + C" ''hl.dsp.exec_cmd("${lib.getExe pkgs.hyprpicker} | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}")'')
 
