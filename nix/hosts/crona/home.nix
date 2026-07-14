@@ -77,6 +77,29 @@ in
     colorScheme = config.catppuccin.flavor;
   };
 
+  programs.zed-editor = {
+    enable = true;
+    mutableUserDebug = false;
+    mutableUserKeymaps = false;
+    mutableUserSettings = false;
+    mutableUserTasks = false;
+
+    userSettings = {
+      vim_mode = true;
+    };
+
+    extensions = [
+      "just"
+      "nix"
+      "toml"
+    ];
+
+    extraPackages = [
+      pkgs.just-lsp
+      pkgs.nixd
+    ];
+  };
+
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;
