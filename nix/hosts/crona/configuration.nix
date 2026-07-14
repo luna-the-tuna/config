@@ -85,6 +85,10 @@ in
     sources.palette = inputs.catppuccin-palette;
   };
 
+  networking = {
+    useNetworkd = true;
+  };
+
   console = {
     earlySetup = true;
     useXkbConfig = true;
