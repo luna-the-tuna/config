@@ -71,6 +71,12 @@ in
     initExtra = lib.mkOrder 2000 "exec ${lib.getExe pkgs.nushell}";
   };
 
+  programs.spicetify = {
+    enable = true;
+    theme = pkgs.spicePackages.themes.catppuccin;
+    colorScheme = config.catppuccin.flavor;
+  };
+
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;
