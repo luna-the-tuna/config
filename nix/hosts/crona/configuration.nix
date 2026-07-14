@@ -264,7 +264,7 @@ in
     ];
 
     defaultFonts.sansSerif = [
-      "Noto Sans"
+      "Work Sans"
       "Noto Cjk Sans"
     ];
   };
