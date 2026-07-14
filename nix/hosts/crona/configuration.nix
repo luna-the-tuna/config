@@ -64,6 +64,9 @@ in
     keep-outputs = true;
     keep-derivations = true;
 
+    use-xdg-base-directories = true;
+    warn-dirty = false;
+
     allowed-users = [ "@wheel" ];
     trusted-users = [ "@wheel" ];
 
