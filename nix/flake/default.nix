@@ -6,6 +6,8 @@
 
     ./args
     ./checks
+    ./lib
+    ./options
     ./overlays
 
     ./devshell.nix

@@ -88,6 +88,10 @@ in
     useXkbConfig = true;
   };
 
+  fonts = {
+    enableDefaultPackages = false;
+  };
+
   users = {
     mutableUsers = false;
     defaultUserShell = pkgs.bashInteractive;
@@ -159,6 +163,15 @@ in
     };
   };
 
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = false;
+  };
+
+  environment.variables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
   environment.shells = [
     pkgs.nushell
   ];
@@ -167,4 +180,35 @@ in
     pkgs.qpwgraph
     pkgs.wiremix
   ];
+
+  fonts.packages = [
+    pkgs.maple-mono.NF
+    pkgs.noto-fonts
+    pkgs.noto-fonts-cjk-sans
+    pkgs.noto-fonts-cjk-serif
+    pkgs.noto-fonts-color-emoji
+    pkgs.work-sans
+  ];
+
+  fonts.fontconfig = {
+    enable = true;
+
+    defaultFonts.monospace = [
+      "Maple Mono NF"
+    ];
+
+    defaultFonts.emoji = [
+      "Noto Color Emoji"
+    ];
+
+    defaultFonts.serif = [
+      "Noto Serif"
+      "Noto Cjk Serif"
+    ];
+
+    defaultFonts.sansSerif = [
+      "Noto Sans"
+      "Noto Cjk Sans"
+    ];
+  };
 }
