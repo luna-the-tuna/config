@@ -98,6 +98,10 @@ in
     defaultPackages = [ ];
   };
 
+  programs = {
+    gamemode.enable = true;
+  };
+
   users = {
     mutableUsers = false;
     defaultUserShell = pkgs.bashInteractive;
@@ -172,6 +176,14 @@ in
   programs.hyprland = {
     enable = true;
     xwayland.enable = false;
+  };
+
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = [ pkgs.proton-ge-bin ];
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
   };
 
   environment.variables = {
