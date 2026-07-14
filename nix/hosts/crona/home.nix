@@ -177,6 +177,12 @@ in
     };
   };
 
+  programs.quickshell = {
+    enable = true;
+    activeConfig = "default";
+    configs.default = "${self}/config/quickshell";
+  };
+
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;
@@ -255,6 +261,10 @@ in
 
   xdg.dataFile."kdenlive/export/customprofiles.xml" = {
     source = "${self}/config/kdenlive/custom-export-profiles.xml";
+  };
+
+  xdg.configFile."quickshell.json".text = builtins.toJSON {
+    wallpaper = "${self}/assets/wallpapers/catppuccin-blossoms.png";
   };
 
   wayland.windowManager.hyprland = with self.lib.hypr; {
@@ -488,6 +498,14 @@ in
       (mkHandler "hyprland.start" ''
         function()
           hl.exec_cmd("${lib.getExe pkgs.xwayland-satellite} :2")
+          hl.exec_cmd("${lib.getExe pkgs.quickshell}")
+        end
+      '')
+
+      (mkHandler "config.reloaded" ''
+        function()
+          hl.exec_cmd("${lib.getExe pkgs.quickshell} kill")
+          hl.exec_cmd("${lib.getExe pkgs.quickshell}")
         end
       '')
     ];

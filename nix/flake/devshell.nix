@@ -10,12 +10,13 @@ in
       name = "config-shell";
       shellHook = script;
 
-      packages = [
+      packages = lib.flatten [
         pkgs.agenix
         pkgs.cocogitto
         pkgs.just
         pkgs.lix
         pkgs.nh
+        (lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.quickshell)
       ];
 
       meta = {

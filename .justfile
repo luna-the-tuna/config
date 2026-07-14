@@ -1,6 +1,9 @@
 # Recipes for working with agenix secret files
 mod secrets "./scripts/just/secrets.just"
 
+# Recipes for working with the Quickshell configuration
+mod quickshell "./scripts/just/quickshell.just"
+
 export NH_FLAKE := justfile_directory()
 export NH_OS_FLAKE := justfile_directory()
 export NH_DARWIN_FLAKE := justfile_directory()
