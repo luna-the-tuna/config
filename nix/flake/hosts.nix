@@ -8,6 +8,7 @@
 let
   modules.nixos = [
     inputs.agenix.nixosModules.default
+    inputs.catppuccin.nixosModules.default
     inputs.disko.nixosModules.default
     inputs.extersia-pkgs.nixosModules.default
     inputs.home-manager.nixosModules.default
@@ -16,6 +17,7 @@ let
 
   modules.darwin = [
     inputs.agenix.darwinModules.default
+    inputs.catppuccin.darwinModules.catppuccin
     inputs.extersia-pkgs.darwinModules.default
     inputs.home-manager.darwinModules.default
     inputs.nixpkgs.nixosModules.readOnlyPkgs

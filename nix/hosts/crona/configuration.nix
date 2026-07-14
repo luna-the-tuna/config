@@ -9,6 +9,7 @@
 let
   homeModules = [
     inputs.agenix.homeManagerModules.default
+    inputs.catppuccin.homeModules.default
     inputs.extersia-pkgs.homeModules.default
   ];
 in
@@ -72,6 +73,16 @@ in
     ];
   };
 
+  catppuccin = {
+    enable = true;
+    autoEnable = true;
+    flavor = "mocha";
+    accent = "mauve";
+
+    plymouth.enable = false;
+    sources.palette = inputs.catppuccin-palette;
+  };
+
   console = {
     earlySetup = true;
     useXkbConfig = true;
@@ -100,6 +111,8 @@ in
     useUserPackages = true;
     backupFileExtension = "home-manager-backup";
     sharedModules = homeModules;
+    extraSpecialArgs = { inherit self inputs; };
+
     users.luna = ./home.nix;
   };
 

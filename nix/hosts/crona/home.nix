@@ -1,16 +1,32 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
 }:
 let
   inherit (config.home) homeDirectory;
+  palette = lib.importJSON "${inputs.catppuccin-palette}/palette.json";
 in
 {
+  _module.args = {
+    inherit (lib.getAttr config.catppuccin.flavor palette) colors;
+  };
+
   home = {
     stateVersion = config.home.version.release;
     preferXdgDirectories = true;
+  };
+
+  catppuccin = {
+    enable = true;
+    autoEnable = true;
+    flavor = "mocha";
+    accent = "mauve";
+
+    mpv.enable = false;
+    sources.palette = inputs.catppuccin-palette;
   };
 
   programs = {
