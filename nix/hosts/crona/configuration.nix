@@ -72,6 +72,11 @@ in
     ];
   };
 
+  console = {
+    earlySetup = true;
+    useXkbConfig = true;
+  };
+
   users = {
     mutableUsers = false;
     defaultUserShell = pkgs.bashInteractive;
@@ -101,6 +106,11 @@ in
   age.secrets = {
     "passwords/luna".file = "${self}/nix/secrets/crona/passwords/luna.age";
     "passwords/root".file = "${self}/nix/secrets/crona/passwords/root.age";
+  };
+
+  services.xserver.xkb = {
+    layout = "us";
+    options = "caps:escape";
   };
 
   services.openssh = {
