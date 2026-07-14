@@ -1,4 +1,9 @@
-{ config, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   inherit (config.home) homeDirectory;
 in
@@ -9,7 +14,18 @@ in
   };
 
   programs = {
+    carapace.enable = true;
     home-manager.enable = true;
+  };
+
+  programs.nushell = {
+    enable = true;
+    settings.show_banner = false;
+  };
+
+  programs.bash = {
+    enable = true;
+    initExtra = lib.mkOrder 2000 "exec ${lib.getExe pkgs.nushell}";
   };
 
   xdg.userDirs = {

@@ -103,6 +103,10 @@ in
     ];
   };
 
+  environment.shells = [
+    pkgs.nushell
+  ];
+
   environment.systemPackages = [
     pkgs.qpwgraph
     pkgs.wiremix
