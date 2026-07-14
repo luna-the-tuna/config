@@ -167,6 +167,16 @@ in
     };
   };
 
+  programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;
+
+    settings."Host crona" = {
+      HostName = "crona.local";
+      User = "luna";
+    };
+  };
+
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;
