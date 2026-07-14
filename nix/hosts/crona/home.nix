@@ -148,6 +148,25 @@ in
     ];
   };
 
+  programs.mpv = {
+    enable = true;
+
+    scripts = [
+      pkgs.mpvScripts.modernz
+      pkgs.mpvScripts.thumbfast
+    ];
+
+    config = {
+      ao = "pulse";
+      osc = "no";
+      target-colorspace-hint = "no";
+    };
+
+    scriptOpts.modernz = {
+      icon_theme = "material";
+    };
+  };
+
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;

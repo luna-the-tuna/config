@@ -216,12 +216,15 @@ in
   environment.systemPackages = [
     pkgs.gimp
     pkgs.kdePackages.kdenlive
+    pkgs.qbittorrent
     pkgs.qpwgraph
+    pkgs.syncplay
     pkgs.wiremix
   ];
 
   fonts.packages = [
     pkgs.maple-mono.NF
+    pkgs.montserrat
     pkgs.noto-fonts
     pkgs.noto-fonts-cjk-sans
     pkgs.noto-fonts-cjk-serif
