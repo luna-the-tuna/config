@@ -77,6 +77,33 @@ in
     colorScheme = config.catppuccin.flavor;
   };
 
+  programs.git = {
+    enable = true;
+
+    signing = {
+      signByDefault = true;
+      format = "ssh";
+      key = "${homeDirectory}/.ssh/id_ed25519.pub";
+    };
+
+    settings = {
+      core.ignorecase = false;
+      pull.rebase = true;
+      init.defaultBranch = "main";
+
+      alias = {
+        lga = "log --decorate --oneline --graph";
+        put = "push --set-upstream";
+        ui = "!${lib.getExe pkgs.lazygit}";
+      };
+
+      user = {
+        name = "Luna Heyman";
+        email = "contact@luna.fish";
+      };
+    };
+  };
+
   programs.zed-editor = {
     enable = true;
     mutableUserDebug = false;
