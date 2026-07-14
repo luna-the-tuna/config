@@ -24,14 +24,32 @@ in
     nixos-version.enable = true;
   };
 
-  boot.loader.efi = {
-    canTouchEfiVariables = true;
+  boot = {
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+  };
+
+  boot.loader = {
+    timeout = 0;
+    efi.canTouchEfiVariables = true;
   };
 
   boot.loader.systemd-boot = {
     enable = true;
     configurationLimit = 10;
   };
+
+  boot.plymouth = {
+    enable = true;
+    theme = pkgs.soul.plymouth-gif-theme.pname;
+    themePackages = [ pkgs.soul.plymouth-gif-theme ];
+  };
+
+  boot.kernelParams = [
+    "quiet"
+    "udev.log_level=3"
+    "systemd.show_status=auto"
+  ];
 
   users = {
     mutableUsers = false;
