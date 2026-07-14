@@ -85,6 +85,11 @@ in
     sources.palette = inputs.catppuccin-palette;
   };
 
+  security = {
+    rtkit.enable = true;
+    sudo.extraConfig = "Defaults env_reset,pwfeedback";
+  };
+
   networking = {
     useNetworkd = true;
   };
