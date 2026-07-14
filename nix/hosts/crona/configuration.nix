@@ -51,6 +51,27 @@ in
     "systemd.show_status=auto"
   ];
 
+  nix = {
+    channel.enable = false;
+    optimise.automatic = true;
+  };
+
+  nix.settings = {
+    keep-going = true;
+    keep-outputs = true;
+    keep-derivations = true;
+
+    allowed-users = [ "@wheel" ];
+    trusted-users = [ "@wheel" ];
+
+    experimental-features = [
+      "flakes"
+      "lix-custom-sub-commands"
+      "nix-command"
+      "pipe-operator"
+    ];
+  };
+
   users = {
     mutableUsers = false;
     defaultUserShell = pkgs.bashInteractive;
