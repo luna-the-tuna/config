@@ -53,6 +53,7 @@ in
     carapace.enable = true;
     home-manager.enable = true;
     nix-your-shell.enable = true;
+    vesktop.enable = true;
   };
 
   programs.direnv = {
