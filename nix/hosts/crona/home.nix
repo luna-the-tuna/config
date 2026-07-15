@@ -201,6 +201,8 @@ in
         "general.autoScroll" = true;
         "middlemouse.paste" = false;
         "zen.urlbar.replace-newtab" = true;
+        "zen.view.compact.enable-at-startup" = true;
+        "zen.view.compact.hide-toolbar" = true;
         "zen.view.use-single-toolbar" = false;
         "zen.welcome-screen.seen" = true;
       };
