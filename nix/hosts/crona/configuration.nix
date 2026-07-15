@@ -23,6 +23,7 @@ in
   soul.hardware = {
     amdgpu.enable = true;
     audio.enable = true;
+    bluetooth.enable = true;
     intelcpu.enable = true;
   };
 
