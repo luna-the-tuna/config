@@ -16,26 +16,9 @@ let
   ];
 in
 {
-  boot = {
-    consoleLogLevel = 0;
-    initrd.verbose = false;
+  soul.boot = {
+    plymouth.enable = true;
   };
-
-  boot.loader = {
-    timeout = 0;
-  };
-
-  boot.plymouth = {
-    enable = true;
-    theme = pkgs.soul.plymouth-gif-theme.pname;
-    themePackages = [ pkgs.soul.plymouth-gif-theme ];
-  };
-
-  boot.kernelParams = [
-    "quiet"
-    "udev.log_level=3"
-    "systemd.show_status=auto"
-  ];
 
   catppuccin = {
     enable = true;
