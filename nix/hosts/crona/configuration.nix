@@ -16,11 +16,6 @@ let
   ];
 in
 {
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    extraLocales = [ "nl_BE.UTF-8/UTF-8" ];
-  };
-
   boot = {
     consoleLogLevel = 0;
     initrd.verbose = false;
