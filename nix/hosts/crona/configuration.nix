@@ -16,15 +16,6 @@ let
   ];
 in
 {
-  system = {
-    disableInstallerTools = true;
-  };
-
-  system.tools = {
-    nixos-rebuild.enable = true;
-    nixos-version.enable = true;
-  };
-
   time = {
     timeZone = "Europe/Brussels";
   };

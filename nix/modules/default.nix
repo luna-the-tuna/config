@@ -1,5 +1,7 @@
 {
   imports = [
+    ./utilities
+
     ./version.nix
   ];
 }
