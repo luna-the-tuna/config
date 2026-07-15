@@ -35,10 +35,6 @@ in
     sudo.extraConfig = "Defaults env_reset,pwfeedback";
   };
 
-  networking = {
-    useNetworkd = true;
-  };
-
   console = {
     earlySetup = true;
     useXkbConfig = true;
@@ -95,11 +91,6 @@ in
     options = "caps:escape";
   };
 
-  services.openssh = {
-    enable = true;
-    settings.PasswordAuthentication = false;
-  };
-
   services.pipewire = {
     enable = true;
     jack.enable = true;
@@ -114,18 +105,6 @@ in
       pkgs.soul.pipewire-quantum
       pkgs.soul.pipewire-rnnoise
     ];
-  };
-
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-
-    publish = {
-      enable = true;
-      addresses = true;
-      userServices = true;
-    };
   };
 
   programs.hyprland = {
