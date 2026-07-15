@@ -23,12 +23,6 @@ in
 
   boot.loader = {
     timeout = 0;
-    efi.canTouchEfiVariables = true;
-  };
-
-  boot.loader.systemd-boot = {
-    enable = true;
-    configurationLimit = 10;
   };
 
   boot.plymouth = {
