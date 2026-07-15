@@ -27,6 +27,13 @@ in
     intelcpu.enable = true;
   };
 
+  soul.packages = [
+    pkgs.gimp
+    pkgs.kdePackages.kdenlive
+    pkgs.qbittorrent
+    pkgs.syncplay
+  ];
+
   boot.initrd.availableKernelModules = [
     "ahci"
     "nvme"
@@ -48,10 +55,6 @@ in
 
   fonts = {
     enableDefaultPackages = false;
-  };
-
-  environment = {
-    defaultPackages = [ ];
   };
 
   programs = {
@@ -137,13 +140,6 @@ in
 
   environment.shells = [
     pkgs.nushell
-  ];
-
-  environment.systemPackages = [
-    pkgs.gimp
-    pkgs.kdePackages.kdenlive
-    pkgs.qbittorrent
-    pkgs.syncplay
   ];
 
   fonts.packages = [

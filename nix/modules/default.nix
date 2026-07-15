@@ -8,6 +8,7 @@
     ./utilities
 
     ./console.nix
+    ./packages.nix
     ./version.nix
   ];
 }
