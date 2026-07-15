@@ -1,5 +1,4 @@
 {
-  config,
   inputs,
   keys,
   pkgs,
@@ -25,6 +24,11 @@ in
     audio.enable = true;
     bluetooth.enable = true;
     intelcpu.enable = true;
+  };
+
+  soul.users.accounts.luna = {
+    firstName = "Luna";
+    lastName = "Heyman";
   };
 
   soul.packages = [
@@ -62,24 +66,6 @@ in
     thunar.enable = true;
   };
 
-  users = {
-    mutableUsers = false;
-    defaultUserShell = pkgs.bashInteractive;
-  };
-
-  users.users.luna = {
-    isNormalUser = true;
-    description = "Luna Heyman";
-    extraGroups = [ "wheel" ];
-    hashedPasswordFile = config.age.secrets."passwords/luna".path;
-    openssh.authorizedKeys.keys = keys.all;
-  };
-
-  users.users.root = {
-    hashedPasswordFile = config.age.secrets."passwords/root".path;
-    openssh.authorizedKeys.keys = keys.all;
-  };
-
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -88,11 +74,6 @@ in
     extraSpecialArgs = { inherit self inputs; };
 
     users.luna = ./home.nix;
-  };
-
-  age.secrets = {
-    "passwords/luna".file = "${self}/nix/secrets/crona/passwords/luna.age";
-    "passwords/root".file = "${self}/nix/secrets/crona/passwords/root.age";
   };
 
   services.xserver.xkb = {

@@ -5,6 +5,7 @@
     ./networking
     ./security
     ./settings
+    ./users
     ./utilities
 
     ./console.nix
