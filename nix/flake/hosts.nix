@@ -7,6 +7,7 @@
 }:
 let
   modules.nixos = [
+    self.nixosModules.default
     inputs.agenix.nixosModules.default
     inputs.catppuccin.nixosModules.default
     inputs.disko.nixosModules.default
@@ -16,6 +17,7 @@ let
   ];
 
   modules.darwin = [
+    self.darwinModules.default
     inputs.agenix.darwinModules.default
     inputs.catppuccin.darwinModules.catppuccin
     inputs.extersia-pkgs.darwinModules.default
@@ -39,6 +41,7 @@ in
 
     perClass = class: {
       modules = lib.getAttr class modules;
+      specialArgs = self.lib.modules.mkHelpers class;
     };
   };
 }

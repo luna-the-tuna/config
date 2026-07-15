@@ -12,6 +12,7 @@
 
     ./devshell.nix
     ./hosts.nix
+    ./modules.nix
     ./packages.nix
     ./systems.nix
     ./treefmt.nix
