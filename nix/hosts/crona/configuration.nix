@@ -20,6 +20,21 @@ in
     plymouth.enable = true;
   };
 
+  soul.hardware = {
+    amdgpu.enable = true;
+    audio.enable = true;
+    intelcpu.enable = true;
+  };
+
+  boot.initrd.availableKernelModules = [
+    "ahci"
+    "nvme"
+    "sd_mod"
+    "usb_storage"
+    "usbhid"
+    "xhci_pci"
+  ];
+
   catppuccin = {
     enable = true;
     autoEnable = true;
@@ -28,10 +43,6 @@ in
 
     plymouth.enable = false;
     sources.palette = inputs.catppuccin-palette;
-  };
-
-  security = {
-    rtkit.enable = true;
   };
 
   console = {
@@ -90,22 +101,6 @@ in
     options = "caps:escape";
   };
 
-  services.pipewire = {
-    enable = true;
-    jack.enable = true;
-    pulse.enable = true;
-
-    alsa = {
-      enable = true;
-      support32Bit = true;
-    };
-
-    configPackages = [
-      pkgs.soul.pipewire-quantum
-      pkgs.soul.pipewire-rnnoise
-    ];
-  };
-
   programs.hyprland = {
     enable = true;
     xwayland.enable = false;
@@ -152,9 +147,7 @@ in
     pkgs.gimp
     pkgs.kdePackages.kdenlive
     pkgs.qbittorrent
-    pkgs.qpwgraph
     pkgs.syncplay
-    pkgs.wiremix
   ];
 
   fonts.packages = [
