@@ -52,30 +52,6 @@ in
     "systemd.show_status=auto"
   ];
 
-  nix = {
-    channel.enable = false;
-    optimise.automatic = true;
-  };
-
-  nix.settings = {
-    keep-going = true;
-    keep-outputs = true;
-    keep-derivations = true;
-
-    use-xdg-base-directories = true;
-    warn-dirty = false;
-
-    allowed-users = [ "@wheel" ];
-    trusted-users = [ "@wheel" ];
-
-    experimental-features = [
-      "flakes"
-      "lix-custom-sub-commands"
-      "nix-command"
-      "pipe-operator"
-    ];
-  };
-
   catppuccin = {
     enable = true;
     autoEnable = true;
