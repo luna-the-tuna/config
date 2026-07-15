@@ -32,7 +32,6 @@ in
 
   security = {
     rtkit.enable = true;
-    sudo.extraConfig = "Defaults env_reset,pwfeedback";
   };
 
   console = {
