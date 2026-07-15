@@ -46,11 +46,6 @@ in
     sources.palette = inputs.catppuccin-palette;
   };
 
-  console = {
-    earlySetup = true;
-    useXkbConfig = true;
-  };
-
   fonts = {
     enableDefaultPackages = false;
   };

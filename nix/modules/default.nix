@@ -7,6 +7,7 @@
     ./settings
     ./utilities
 
+    ./console.nix
     ./version.nix
   ];
 }
