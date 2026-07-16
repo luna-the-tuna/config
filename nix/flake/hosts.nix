@@ -14,6 +14,7 @@ let
     inputs.extersia-pkgs.nixosModules.default
     inputs.home-manager.nixosModules.default
     inputs.nixpkgs.nixosModules.readOnlyPkgs
+    inputs.tangled.nixosModules.knot
   ];
 
   modules.darwin = [
