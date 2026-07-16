@@ -1,5 +1,6 @@
 {
   imports = [
+    ./amdcpu.nix
     ./amdgpu.nix
     ./audio.nix
     ./bluetooth.nix

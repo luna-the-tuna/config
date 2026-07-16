@@ -29,6 +29,12 @@ in
   easy-hosts = {
     useGlobalPkgs = true;
 
+    hosts.blackstar = {
+      class = "nixos";
+      arch = "x86_64";
+      path = "${self}/nix/hosts/blackstar";
+    };
+
     hosts.crona = {
       class = "nixos";
       arch = "x86_64";
