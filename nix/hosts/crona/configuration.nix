@@ -153,5 +153,12 @@ in
       "Work Sans"
       "Noto Cjk Sans"
     ];
+
+    localConf = ''
+      <alias>
+        <family>system-ui</family>
+        <prefer><family>sans-serif</family></prefer>
+      </alias>
+    '';
   };
 }
