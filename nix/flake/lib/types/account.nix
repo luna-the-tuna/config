@@ -35,6 +35,12 @@
           example = "Maka Albarn";
           type = lib.types.str;
         };
+
+        email = lib.mkOption {
+          description = "The email address of the user.";
+          example = "maka.albarn@shibusen.org";
+          type = lib.types.str;
+        };
       };
 
       config = {

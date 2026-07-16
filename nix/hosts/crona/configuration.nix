@@ -23,6 +23,7 @@
   soul.users.accounts.luna = {
     firstName = "Luna";
     lastName = "Heyman";
+    email = "contact@luna.fish";
   };
 
   soul.packages = [
