@@ -9,16 +9,11 @@
   ...
 }:
 let
-  inherit (config.home) homeDirectory;
   palette = lib.importJSON "${inputs.catppuccin-palette}/palette.json";
 in
 {
   _module.args = {
     inherit (lib.getAttr config.catppuccin.flavor palette) colors;
-  };
-
-  home = {
-    preferXdgDirectories = true;
   };
 
   home.pointerCursor = {
@@ -217,21 +212,6 @@ in
         };
       };
     };
-  };
-
-  xdg.userDirs = {
-    enable = true;
-    createDirectories = true;
-
-    desktop = "${homeDirectory}/desktop";
-    documents = "${homeDirectory}/documents";
-    download = "${homeDirectory}/downloads";
-    music = "${homeDirectory}/music";
-    pictures = "${homeDirectory}/pictures";
-    projects = "${homeDirectory}/projects";
-    publicShare = "${homeDirectory}/public";
-    templates = "${homeDirectory}/templates";
-    videos = "${homeDirectory}/videos";
   };
 
   xdg.dataFile."kdenlive/export/customprofiles.xml" = {

@@ -9,6 +9,7 @@
     ./utilities
 
     ./console.nix
+    ./directories.nix
     ./home.nix
     ./packages.nix
     ./version.nix
