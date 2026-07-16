@@ -22,3 +22,8 @@ build hostname=hostname:
 [group("systems")]
 switch hostname=hostname:
     nh {{ nh_builder }} switch -H {{ hostname }} -o {{ nh_output }} --show-trace
+
+[doc("Run garbage collection on the system")]
+[group("utilities")]
+clean: && switch
+    nh clean all
