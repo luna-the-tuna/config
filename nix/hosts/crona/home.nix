@@ -135,16 +135,6 @@ in
     };
   };
 
-  programs.ssh = {
-    enable = true;
-    enableDefaultConfig = false;
-
-    settings."Host crona" = {
-      HostName = "crona.local";
-      User = "luna";
-    };
-  };
-
   programs.quickshell = {
     enable = true;
     activeConfig = "default";
