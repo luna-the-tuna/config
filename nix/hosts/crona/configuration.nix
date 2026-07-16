@@ -2,21 +2,15 @@
   inputs,
   keys,
   pkgs,
-  self,
   ...
 }:
-let
-  homeModules = [
-    inputs.agenix.homeManagerModules.default
-    inputs.catppuccin.homeModules.default
-    inputs.extersia-pkgs.homeModules.default
-    inputs.spicetify.homeManagerModules.default
-    inputs.zen-browser.homeModules.default
-  ];
-in
 {
   soul.boot = {
     plymouth.enable = true;
+  };
+
+  soul.home = {
+    imports = [ ./home.nix ];
   };
 
   soul.hardware = {
@@ -64,16 +58,6 @@ in
   programs = {
     gamemode.enable = true;
     thunar.enable = true;
-  };
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    backupFileExtension = "home-manager-backup";
-    sharedModules = homeModules;
-    extraSpecialArgs = { inherit self inputs; };
-
-    users.luna = ./home.nix;
   };
 
   services.xserver.xkb = {

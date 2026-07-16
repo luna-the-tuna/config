@@ -18,7 +18,6 @@ in
   };
 
   home = {
-    stateVersion = config.home.version.release;
     preferXdgDirectories = true;
   };
 
@@ -57,7 +56,6 @@ in
   programs = {
     bat.enable = true;
     carapace.enable = true;
-    home-manager.enable = true;
     lazygit.enable = true;
     nix-your-shell.enable = true;
     vesktop.enable = true;
