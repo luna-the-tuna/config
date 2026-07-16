@@ -12,6 +12,11 @@ in
     keys.blackstar.luna
   ];
 
+  "blackstar/wireguard/private-key.age".publicKeys = [
+    keys.blackstar.root
+    keys.blackstar.luna
+  ];
+
   "crona/passwords/luna.age".publicKeys = [
     keys.crona.root
     keys.crona.luna

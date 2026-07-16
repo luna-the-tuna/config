@@ -1,4 +1,9 @@
-{ config, ... }:
+{
+  config,
+  lib,
+  self,
+  ...
+}:
 {
   soul.boot = {
     loader.program = "grub";
@@ -27,9 +32,28 @@
     443
   ];
 
+  networking.firewall.allowedUDPPorts = [
+    config.networking.wireguard.interfaces.wg0.listenPort
+  ];
+
   security.acme = {
     acceptTerms = true;
     defaults.email = config.soul.users.admin.email;
+  };
+
+  age.secrets = {
+    "wireguard/private-key".file = "${self}/nix/secrets/blackstar/wireguard/private-key.age";
+  };
+
+  networking.wireguard.interfaces.wg0 = {
+    ips = [ "10.0.0.1/24" ];
+    listenPort = 51820;
+    privateKeyFile = config.age.secrets."wireguard/private-key".path;
+
+    peers = lib.singleton {
+      publicKey = "zspuVa1g73mlsVY423UDSq+vmBxdw2vq1c8wzlrBSjI=";
+      allowedIPs = [ "10.0.0.2/32" ];
+    };
   };
 
   services.tangled.knot = {
