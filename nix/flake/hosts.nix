@@ -42,6 +42,12 @@ in
       path = "${self}/nix/hosts/crona";
     };
 
+    hosts.tsubaki = {
+      class = "nixos";
+      arch = "x86_64";
+      path = "${self}/nix/hosts/tsubaki";
+    };
+
     shared = {
       specialArgs = { inherit keys; };
     };

@@ -26,4 +26,19 @@ in
     keys.crona.root
     keys.crona.luna
   ];
+
+  "tsubaki/passwords/root.age".publicKeys = [
+    keys.tsubaki.root
+    keys.tsubaki.luna
+  ];
+
+  "tsubaki/passwords/luna.age".publicKeys = [
+    keys.tsubaki.root
+    keys.tsubaki.luna
+  ];
+
+  "tsubaki/wireguard/private-key.age".publicKeys = [
+    keys.tsubaki.root
+    keys.tsubaki.luna
+  ];
 }

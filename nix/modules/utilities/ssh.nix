@@ -15,6 +15,11 @@
       hostNames = [ "crona.local" ];
       publicKey = keys.crona.root;
     };
+
+    tsubaki = {
+      hostNames = [ "tsubaki.local" ];
+      publicKey = keys.tsubaki.root;
+    };
   };
 
   soul.home.programs.ssh = {
@@ -28,6 +33,11 @@
 
     settings."Host crona" = {
       HostName = "crona.local";
+      User = "luna";
+    };
+
+    settings."Host tsubaki" = {
+      HostName = "tsubaki.local";
       User = "luna";
     };
   };
