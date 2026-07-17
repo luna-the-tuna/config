@@ -210,6 +210,7 @@ in
 
   xdg.configFile."quickshell.json".text = builtins.toJSON {
     wallpaper = "${self}/assets/wallpapers/catppuccin-blossoms.png";
+    colors = lib.mapAttrs (name: value: value.hex) colors;
   };
 
   wayland.windowManager.hyprland = with self.lib.hypr; {
@@ -338,14 +339,14 @@ in
         leaf = "workspacesIn";
         bezier = "easeInOut";
         speed = 1.9;
-        style = "slide";
+        style = "slidevert";
       }
       {
         enabled = true;
         leaf = "workspacesOut";
         bezier = "easeInOut";
         speed = 1.9;
-        style = "slide";
+        style = "slidevert";
       }
     ];
 
