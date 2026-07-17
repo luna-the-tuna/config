@@ -13,6 +13,11 @@
     amdcpu.enable = true;
   };
 
+  soul.server = {
+    domain = "luna.fish";
+    acme.enable = true;
+  };
+
   soul.users.accounts.luna = {
     firstName = "Luna";
     lastName = "Heyman";
@@ -35,11 +40,6 @@
   networking.firewall.allowedUDPPorts = [
     config.networking.wireguard.interfaces.wg0.listenPort
   ];
-
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = config.soul.users.admin.email;
-  };
 
   age.secrets = {
     "wireguard/private-key".file = "${self}/nix/secrets/blackstar/wireguard/private-key.age";
@@ -66,7 +66,7 @@
 
     server = {
       owner = "did:plc:5odpemgsnxty3zbaahu77rhv";
-      hostname = "knot.luna.fish";
+      hostname = config.lib.domain.mkSubDomain "knot";
     };
   };
 
@@ -83,7 +83,7 @@
       };
     };
 
-    virtualHosts."jellyfin.luna.fish" = {
+    virtualHosts.${config.lib.domain.mkSubDomain "jellyfin"} = {
       enableACME = true;
       forceSSL = true;
 

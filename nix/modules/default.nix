@@ -4,6 +4,7 @@
     ./hardware
     ./networking
     ./security
+    ./server
     ./settings
     ./users
     ./utilities
