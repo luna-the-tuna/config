@@ -5,6 +5,10 @@ let
     allowUnfree = true;
   };
 
+  config.permittedInsecurePackages = [
+    "electron-40.10.5"
+  ];
+
   overlays = [
     self.overlays.default
     self.overlays.spicetify
