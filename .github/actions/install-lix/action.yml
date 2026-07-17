@@ -1,0 +1,11 @@
+name: Install Lix
+description: Install Lix with some custom configuration
+
+runs:
+  using: composite
+
+  steps:
+    - name: Install Lix
+      uses: samueldr/lix-gha-installer-action@v2026-06-15
+      with:
+        extra_nix_config: experimental-features = pipe-operator flakes nix-command lix-custom-sub-commands
