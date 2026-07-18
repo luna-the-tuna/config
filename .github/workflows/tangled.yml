@@ -1,6 +1,9 @@
 name: tangled
 run-name: Pushing repository to Tangled
-on: push
+
+on:
+  push:
+    branches: [main]
 
 permissions:
   contents: read
