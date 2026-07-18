@@ -36,10 +36,17 @@
 
   age.secrets = {
     "wireguard/private-key".file = "${self}/nix/secrets/tsubaki/wireguard/private-key.age";
+    "protonvpn/private-key".file = "${self}/nix/secrets/tsubaki/protonvpn/private-key.age";
   };
 
-  networking.wireguard.interfaces.wg0 = {
-    ips = [ "10.0.0.2/24" ];
+  networking.interfaces.enp1s0.ipv4.routes = lib.singleton {
+    address = "162.19.246.218";
+    prefixLength = 32;
+    via = "192.168.0.1";
+  };
+
+  networking.wg-quick.interfaces.wg0 = {
+    address = [ "10.0.0.2/24" ];
     privateKeyFile = config.age.secrets."wireguard/private-key".path;
 
     peers = lib.singleton {
@@ -47,6 +54,23 @@
       allowedIPs = [ "10.0.0.1/32" ];
       endpoint = "luna.fish:51820";
       persistentKeepalive = 25;
+    };
+  };
+
+  networking.wg-quick.interfaces.protonvpn = {
+    address = [ "10.2.0.2/32" ];
+    dns = [ "10.2.0.1" ];
+    privateKeyFile = config.age.secrets."protonvpn/private-key".path;
+
+    peers = lib.singleton {
+      publicKey = "bb/CPM+G5wt6VrDIdisuxrUNEqfH5hPxVw/+pYAOcWw=";
+      endpoint = "79.127.160.187:51820";
+      persistentKeepalive = 25;
+
+      allowedIPs = [
+        "0.0.0.0/0"
+        "::/0"
+      ];
     };
   };
 

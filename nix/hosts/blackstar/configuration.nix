@@ -38,15 +38,15 @@
   ];
 
   networking.firewall.allowedUDPPorts = [
-    config.networking.wireguard.interfaces.wg0.listenPort
+    config.networking.wg-quick.interfaces.wg0.listenPort
   ];
 
   age.secrets = {
     "wireguard/private-key".file = "${self}/nix/secrets/blackstar/wireguard/private-key.age";
   };
 
-  networking.wireguard.interfaces.wg0 = {
-    ips = [ "10.0.0.1/24" ];
+  networking.wg-quick.interfaces.wg0 = {
+    address = [ "10.0.0.1/24" ];
     listenPort = 51820;
     privateKeyFile = config.age.secrets."wireguard/private-key".path;
 

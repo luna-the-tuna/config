@@ -2,6 +2,7 @@ let
   keys = import ./keys.nix;
 in
 {
+  # keep-sorted start block=yes newline_separated=yes
   "blackstar/passwords/luna.age".publicKeys = [
     keys.blackstar.root
     keys.blackstar.luna
@@ -27,12 +28,17 @@ in
     keys.crona.luna
   ];
 
+  "tsubaki/passwords/luna.age".publicKeys = [
+    keys.tsubaki.root
+    keys.tsubaki.luna
+  ];
+
   "tsubaki/passwords/root.age".publicKeys = [
     keys.tsubaki.root
     keys.tsubaki.luna
   ];
 
-  "tsubaki/passwords/luna.age".publicKeys = [
+  "tsubaki/protonvpn/private-key.age".publicKeys = [
     keys.tsubaki.root
     keys.tsubaki.luna
   ];
@@ -41,4 +47,5 @@ in
     keys.tsubaki.root
     keys.tsubaki.luna
   ];
+  # keep-sorted end
 }
