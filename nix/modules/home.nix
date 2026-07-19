@@ -11,7 +11,6 @@ let
     inputs.agenix.homeManagerModules.default
     inputs.catppuccin.homeModules.default
     inputs.extersia-pkgs.homeModules.default
-    inputs.spicetify.homeManagerModules.default
     inputs.zen-browser.homeModules.default
   ];
 in
