@@ -41,6 +41,12 @@
           example = "maka.albarn@shibusen.org";
           type = lib.types.str;
         };
+
+        did = lib.mkOption {
+          description = "The ATProto DID of the user.";
+          example = "did:plc:5odpemgsnxty3zbaahu77rhv";
+          type = lib.types.str;
+        };
       };
 
       config = {

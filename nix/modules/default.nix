@@ -5,6 +5,7 @@
     ./networking
     ./security
     ./server
+    ./services
     ./settings
     ./users
     ./utilities

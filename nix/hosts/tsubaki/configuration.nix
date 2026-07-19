@@ -13,6 +13,7 @@
     firstName = "Luna";
     lastName = "Heyman";
     email = "contact@luna.fish";
+    did = "did:plc:5odpemgsnxty3zbaahu77rhv";
   };
 
   soul.networking.protonvpn = {

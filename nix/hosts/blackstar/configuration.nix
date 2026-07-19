@@ -22,6 +22,11 @@
     firstName = "Luna";
     lastName = "Heyman";
     email = "contact@luna.fish";
+    did = "did:plc:5odpemgsnxty3zbaahu77rhv";
+  };
+
+  soul.services = {
+    tangled.enable = true;
   };
 
   boot.initrd.availableKernelModules = [
@@ -56,32 +61,8 @@
     };
   };
 
-  services.tangled.knot = {
-    enable = true;
-    stateDir = "/var/lib/tangled/knot";
-
-    repo = {
-      scanPath = "${config.services.tangled.knot.stateDir}/repos";
-    };
-
-    server = {
-      owner = "did:plc:5odpemgsnxty3zbaahu77rhv";
-      hostname = config.lib.domain.mkSubDomain "knot";
-    };
-  };
-
   services.nginx = {
     enable = true;
-
-    virtualHosts.${config.services.tangled.knot.server.hostname} = {
-      enableACME = true;
-      forceSSL = true;
-
-      locations."/" = {
-        proxyPass = "http://${config.services.tangled.knot.server.listenAddr}";
-        proxyWebsockets = true;
-      };
-    };
 
     virtualHosts.${config.lib.domain.mkSubDomain "jellyfin"} = {
       enableACME = true;
