@@ -77,6 +77,12 @@
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
 
+    spicetify = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.systems.follows = "systems";
+    };
+
     systems = {
       url = "github:nix-systems/triplet";
     };

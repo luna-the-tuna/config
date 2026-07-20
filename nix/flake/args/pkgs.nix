@@ -7,6 +7,7 @@ let
 
   overlays = [
     self.overlays.default
+    self.overlays.spicetify
     self.overlays.zen
 
     inputs.agenix.overlays.default

@@ -546,6 +546,7 @@
         "lix": "lix",
         "lix-module": "lix-module",
         "nixpkgs": "nixpkgs",
+        "spicetify": "spicetify",
         "systems": "systems",
         "tangled": "tangled",
         "treefmt": "treefmt",
@@ -583,6 +584,29 @@
       "original": {
         "type": "git",
         "url": "https://spectrum-os.org/git/spectrum"
+      }
+    },
+    "spicetify": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": [
+          "systems"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784442826,
+        "narHash": "sha256-oXizZ5p9MdNicgEPw7mkZD0gezVlCbgeG6aAjXpDyHA=",
+        "owner": "Gerg-L",
+        "repo": "spicetify-nix",
+        "rev": "47c9223179f533174b719a53209aa9ab3e2f4e9c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gerg-L",
+        "repo": "spicetify-nix",
+        "type": "github"
       }
     },
     "sqlite-lib-src": {

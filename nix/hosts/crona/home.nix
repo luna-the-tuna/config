@@ -85,6 +85,12 @@ in
     };
   };
 
+  programs.spicetify = {
+    enable = true;
+    theme = pkgs.spicePackages.themes.catppuccin;
+    colorScheme = config.catppuccin.flavor;
+  };
+
   programs.zed-editor = {
     enable = true;
     mutableUserDebug = false;
