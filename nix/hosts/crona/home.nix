@@ -147,12 +147,14 @@ in
       pinsForce = true;
 
       settings = {
+        "browser.toolbars.bookmarks.visibility" = "always";
         "extensions.autoDisableScopes" = false;
         "general.autoScroll" = true;
         "middlemouse.paste" = false;
-        "zen.urlbar.replace-newtab" = true;
+        "zen.urlbar.replace-newtab" = false;
         "zen.view.compact.enable-at-startup" = true;
-        "zen.view.compact.hide-toolbar" = true;
+        "zen.view.compact.hide-tabbar" = true;
+        "zen.view.compact.hide-toolbar" = false;
         "zen.view.use-single-toolbar" = false;
         "zen.welcome-screen.seen" = true;
       };
@@ -172,9 +174,112 @@ in
           shinigami-eyes
           sponsorblock
           stylus
+          tablissng
           ublock-origin
           yomitan
           youtube-shorts-block
+        ];
+      };
+
+      bookmarks = {
+        force = true;
+
+        settings = [
+          {
+            name = "Toolbar";
+            toolbar = true;
+
+            bookmarks = [
+              {
+                name = "YouTube";
+                url = "https://www.youtube.com";
+              }
+              {
+                name = "Music";
+                url = "https://music.youtube.com";
+              }
+              "separator"
+              {
+                name = "Mail";
+                url = "https://mail.proton.me";
+              }
+              {
+                name = "Calendar";
+                url = "https://calendar.proton.me";
+              }
+              {
+                name = "Drive";
+                url = "https://drive.proton.me";
+              }
+              "separator"
+              {
+                name = "GitHub";
+                url = "https://github.com";
+              }
+              {
+                name = "Tangled";
+                url = "https://tangled.org";
+              }
+              "separator"
+              {
+                name = "Witchsky";
+                url = "https://witchsky.app";
+              }
+              {
+                name = "Letterboxd";
+                url = "https://letterboxd.com";
+              }
+              {
+                name = "MAL";
+                url = "https://myanimelist.net";
+              }
+              "separator"
+              {
+                name = "Nix";
+
+                bookmarks = [
+                  {
+                    name = "Nix.ee";
+                    url = "https://nix.ee";
+                  }
+                  {
+                    name = "Search";
+                    url = "https://search.nix.ee";
+                  }
+                  {
+                    name = "Docs";
+                    url = "https://docs.nix.ee";
+                  }
+                ];
+              }
+              {
+                name = "Dles";
+
+                bookmarks = [
+                  {
+                    name = "Raddle";
+                    url = "https://raddle.quest";
+                  }
+                  {
+                    name = "Connections";
+                    url = "https://www.nytimes.com/games/connections";
+                  }
+                  {
+                    name = "Framed";
+                    url = "https://framed.wtf";
+                  }
+                  {
+                    name = "Box-office Game";
+                    url = "https://boxofficega.me";
+                  }
+                  {
+                    name = "Scrandle";
+                    url = "https://scrandle.com";
+                  }
+                ];
+              }
+            ];
+          }
         ];
       };
 
