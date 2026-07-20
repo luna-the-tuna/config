@@ -65,11 +65,6 @@
     thunar.enable = true;
   };
 
-  services.xserver.xkb = {
-    layout = "us";
-    options = "caps:escape";
-  };
-
   programs.hyprland = {
     enable = true;
     xwayland.enable = false;

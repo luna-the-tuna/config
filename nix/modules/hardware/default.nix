@@ -7,5 +7,6 @@
     ./firmware.nix
     ./graphics.nix
     ./intelcpu.nix
+    ./keyboard.nix
   ];
 }
