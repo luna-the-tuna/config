@@ -55,11 +55,7 @@ mkNixosModule {
       peers = lib.singleton {
         inherit (cfg) publicKey endpoint;
         persistentKeepalive = 25;
-
-        allowedIPs = [
-          "0.0.0.0/0"
-          "::/0"
-        ];
+        allowedIPs = [ "0.0.0.0/0" ];
       };
     };
   };
