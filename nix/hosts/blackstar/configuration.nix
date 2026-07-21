@@ -29,6 +29,16 @@
     tangled.enable = true;
   };
 
+  soul.services.nginx = {
+    enable = true;
+
+    proxies = {
+      calibre.target = "http://10.0.0.2:8002";
+      jellyfin.target = "http://10.0.0.2:8096";
+      komga.target = "http://10.0.0.2:8001";
+    };
+  };
+
   boot.initrd.availableKernelModules = [
     "ata_piix"
     "sd_mod"
@@ -58,61 +68,6 @@
     peers = lib.singleton {
       publicKey = "zspuVa1g73mlsVY423UDSq+vmBxdw2vq1c8wzlrBSjI=";
       allowedIPs = [ "10.0.0.2/32" ];
-    };
-  };
-
-  services.nginx = {
-    enable = true;
-
-    virtualHosts.${config.lib.domain.mkSubDomain "jellyfin"} = {
-      enableACME = true;
-      forceSSL = true;
-
-      locations."/" = {
-        proxyPass = "http://10.0.0.2:8096";
-        proxyWebsockets = true;
-
-        extraConfig = ''
-          proxy_set_header Host $host;
-          proxy_set_header X-Real-IP $remote_addr;
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-          proxy_set_header X-Forwarded-Proto $scheme;
-        '';
-      };
-    };
-
-    virtualHosts.${config.lib.domain.mkSubDomain "komga"} = {
-      enableACME = true;
-      forceSSL = true;
-
-      locations."/" = {
-        proxyPass = "http://10.0.0.2:8001";
-        proxyWebsockets = true;
-
-        extraConfig = ''
-          proxy_set_header Host $host;
-          proxy_set_header X-Real-IP $remote_addr;
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-          proxy_set_header X-Forwarded-Proto $scheme;
-        '';
-      };
-    };
-
-    virtualHosts.${config.lib.domain.mkSubDomain "calibre"} = {
-      enableACME = true;
-      forceSSL = true;
-
-      locations."/" = {
-        proxyPass = "http://10.0.0.2:8002";
-        proxyWebsockets = true;
-
-        extraConfig = ''
-          proxy_set_header Host $host;
-          proxy_set_header X-Real-IP $remote_addr;
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-          proxy_set_header X-Forwarded-Proto $scheme;
-        '';
-      };
     };
   };
 }

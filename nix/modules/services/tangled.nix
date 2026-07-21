@@ -25,17 +25,13 @@ mkNixosModule {
       };
     };
 
-    services.nginx = {
-      enable = true;
+    services.nginx.virtualHosts.${config.services.tangled.knot.server.hostname} = {
+      enableACME = config.security.acme.acceptTerms;
+      forceSSL = config.security.acme.acceptTerms;
 
-      virtualHosts.${config.services.tangled.knot.server.hostname} = {
-        enableACME = config.security.acme.acceptTerms;
-        forceSSL = config.security.acme.acceptTerms;
-
-        locations."/" = {
-          proxyPass = "http://${config.services.tangled.knot.server.listenAddr}";
-          proxyWebsockets = true;
-        };
+      locations."/" = {
+        proxyPass = "http://${config.services.tangled.knot.server.listenAddr}";
+        proxyWebsockets = true;
       };
     };
   };
