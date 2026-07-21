@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   self,
   ...
 }:
@@ -24,6 +25,40 @@
     publicKey = "bb/CPM+G5wt6VrDIdisuxrUNEqfH5hPxVw/+pYAOcWw=";
     privateKeyFile = "${self}/nix/secrets/tsubaki/protonvpn/private-key.age";
   };
+
+  services.komga = {
+    enable = true;
+    openFirewall = true;
+    settings.server.port = 8001;
+  };
+
+  services.calibre-web = {
+    enable = true;
+    openFirewall = true;
+    dataDir = "/var/lib/calibre-web";
+
+    listen = {
+      ip = "0.0.0.0";
+      port = 8002;
+    };
+
+    options = {
+      calibreLibrary = "/srv/books";
+      enableBookUploading = true;
+    };
+  };
+
+  systemd.tmpfiles.rules = [
+    "d ${config.services.calibre-web.options.calibreLibrary} 0750 calibre-web calibre-web -"
+  ];
+
+  systemd.services.calibre-web.preStart = ''
+    library_directory="${config.services.calibre-web.options.calibreLibrary}"
+
+    if [ ! -f "$library_directory/metadata.db" ]; then
+      ${lib.getExe' pkgs.calibre "calibredb"} add --empty --with-library "$library_directory"
+    fi
+  '';
 
   boot.initrd.availableKernelModules = [
     "ahci"
@@ -69,16 +104,5 @@
   services.jellyfin = {
     enable = true;
     openFirewall = true;
-  };
-
-  services.nginx = {
-    enable = true;
-
-    virtualHosts.${config.lib.domain.mkSubDomain "jellyfin"} = {
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:8096";
-        proxyWebsockets = true;
-      };
-    };
   };
 }
