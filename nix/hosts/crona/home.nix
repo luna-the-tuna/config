@@ -57,6 +57,15 @@ in
     yazi.enable = true;
   };
 
+  programs.nixvim = {
+    enable = true;
+    defaultEditor = true;
+    vimAlias = true;
+    viAlias = true;
+    vimdiffAlias = true;
+    nixpkgs.source = inputs.nixpkgs;
+  };
+
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
