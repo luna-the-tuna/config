@@ -25,8 +25,15 @@ Variants {
             spacing: margin
 
             anchors {
-                fill: parent
                 margins: margin
+                top: parent.top
+                right: parent.right
+                left: parent.left
+            }
+
+            Time {
+                anchors.left: parent.left
+                anchors.right: parent.right
             }
 
             Workspaces {

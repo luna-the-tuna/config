@@ -7,8 +7,8 @@ Item {
 
     default property alias content: contentItem.data
 
-    readonly property var spacing: 15
-    readonly property var padding: spacing * 2
+    property var spacing: 15
+    property var padding: spacing * 2
 
     implicitHeight: contentItem.childrenRect.height + padding
 
