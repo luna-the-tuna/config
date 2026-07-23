@@ -237,16 +237,16 @@ in
               }
               "separator"
               {
-                name = "Witchsky";
-                url = "https://witchsky.app";
-              }
-              {
                 name = "Letterboxd";
                 url = "https://letterboxd.com";
               }
               {
                 name = "MAL";
                 url = "https://myanimelist.net";
+              }
+              {
+                name = "Backloggd";
+                url = "https://backloggd.com";
               }
               "separator"
               {
