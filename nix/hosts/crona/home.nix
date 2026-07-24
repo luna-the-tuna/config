@@ -248,6 +248,15 @@ in
                 name = "Backloggd";
                 url = "https://backloggd.com";
               }
+              {
+                name = "AOTY";
+                url = "https://www.albumoftheyear.org";
+              }
+              "separator"
+              {
+                name = "ProtonDB";
+                url = "https://www.protondb.com";
+              }
               "separator"
               {
                 name = "Nix";
