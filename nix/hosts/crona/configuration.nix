@@ -62,6 +62,7 @@
 
   programs = {
     gamemode.enable = true;
+    pmount.enable = true;
     thunar.enable = true;
   };
 
