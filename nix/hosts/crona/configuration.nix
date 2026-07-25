@@ -23,6 +23,7 @@
   };
 
   soul.packages = [
+    pkgs.crosspatch
     pkgs.gimp
     pkgs.kdePackages.kdenlive
     pkgs.qbittorrent
