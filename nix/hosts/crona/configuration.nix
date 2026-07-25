@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 {
   soul.boot = {
     plymouth.enable = true;
@@ -20,6 +20,10 @@
     lastName = "Heyman";
     email = "contact@luna.fish";
     did = "did:plc:5odpemgsnxty3zbaahu77rhv";
+  };
+
+  soul.desktop = {
+    hyprland.enable = true;
   };
 
   soul.packages = [
@@ -47,16 +51,6 @@
     "xhci_pci"
   ];
 
-  catppuccin = {
-    enable = true;
-    autoEnable = true;
-    flavor = "mocha";
-    accent = "mauve";
-
-    plymouth.enable = false;
-    sources.palette = inputs.catppuccin-palette;
-  };
-
   fonts = {
     enableDefaultPackages = false;
   };
@@ -65,11 +59,6 @@
     gamemode.enable = true;
     pmount.enable = true;
     thunar.enable = true;
-  };
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = false;
   };
 
   programs.steam = {
@@ -87,10 +76,6 @@
       pkgs.obs-studio-plugins.obs-pipewire-audio-capture
       pkgs.obs-studio-plugins.obs-vaapi
     ];
-  };
-
-  environment.variables = {
-    NIXOS_OZONE_WL = "1";
   };
 
   environment.shells = [
