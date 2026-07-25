@@ -143,11 +143,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784597032,
-        "narHash": "sha256-38hsubMlbgxTYyU6ENJRYi30ZEhySXvVhYLGgft5PKI=",
+        "lastModified": 1784942779,
+        "narHash": "sha256-NzS0UcCcD5rRqgwfWJgWkF+UKE7x29kx8bCToJR3s+c=",
         "owner": "extersia-org",
         "repo": "pkgs",
-        "rev": "8e4ccc07c7cceebc89a8305b27d4d4f02b8c5e8e",
+        "rev": "8273ad4f30a469fedcd05656ae06256920fd683f",
         "type": "github"
       },
       "original": {
@@ -207,11 +207,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1784606575,
-        "narHash": "sha256-ptfekNyhnUWagNco1dHOtkXUoLxFegzjwOc3ifQgi5Y=",
+        "lastModified": 1784963334,
+        "narHash": "sha256-Xbj8fFapX+ufz8kx0sH33RAvF0Pauzfg5oihn38SWtE=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "98ba5c85f2ef559d38c006a85b0429a27323323a",
+        "rev": "557935d63e75f4bfbd61ca3cede3a632edbed7e5",
         "type": "gitlab"
       },
       "original": {
@@ -333,11 +333,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784588016,
-        "narHash": "sha256-ouZe80aWEhMLVMkqICFDN+JUw+0FJtCr/bh+hHtRtMg=",
+        "lastModified": 1784913159,
+        "narHash": "sha256-JWq0BfjO4ktpH5USfQNQzdvHpIDT8fSKD5K7LvdMRFs=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "deeb6b7eb7e0c44ae1819c051ce175bd92a85100",
+        "rev": "079a3b5d1aa6a719920a51316253b7d6dd22738d",
         "type": "github"
       },
       "original": {
@@ -349,25 +349,25 @@
     "htmx-src": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-nm6avZuEBg67SSyyZUhjpXVNstHHgUxrtBHqJgowU08=",
+        "narHash": "sha256-2D8I0L0u6qb57QpeVn88RrT0xatDwQwG/lWOTjuEFPc=",
         "type": "file",
-        "url": "https://unpkg.com/htmx.org@2.0.4/dist/htmx.min.js"
+        "url": "https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js"
       },
       "original": {
         "type": "file",
-        "url": "https://unpkg.com/htmx.org@2.0.4/dist/htmx.min.js"
+        "url": "https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js"
       }
     },
     "htmx-ws-src": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-2fg6KyEJoO24q0fQqbz9RMaYNPQrMwpZh29tkSqdqGY=",
+        "narHash": "sha256-woiluaeAoxH/CyDkpk6LYNWCzxH8PHgwgnrlBFGJxgk=",
         "type": "file",
-        "url": "https://cdn.jsdelivr.net/npm/htmx-ext-ws@2.0.2"
+        "url": "https://cdn.jsdelivr.net/npm/htmx-ext-ws@2.0.4"
       },
       "original": {
         "type": "file",
-        "url": "https://cdn.jsdelivr.net/npm/htmx-ext-ws@2.0.2"
+        "url": "https://cdn.jsdelivr.net/npm/htmx-ext-ws@2.0.4"
       }
     },
     "ibm-plex-mono-src": {
@@ -415,11 +415,11 @@
     "lix": {
       "flake": false,
       "locked": {
-        "lastModified": 1784567488,
-        "narHash": "sha256-9+9/RAk8x9YEA5sJhMaTKiYTCwhECx5i3tl1iQNHP3s=",
+        "lastModified": 1784923365,
+        "narHash": "sha256-6Ynmy55XUPKHU7uMXduJSJEiGe5UkW+VTsJ3yYQKrZ8=",
         "ref": "refs/heads/main",
-        "rev": "37ff864b79671cead7704d5238383c090760fd7b",
-        "revCount": 19358,
+        "rev": "a78d68300b5436f57ac43aa49fb49195d14e199d",
+        "revCount": 19404,
         "type": "git",
         "url": "https://git.lix.systems/lix-project/lix"
       },
@@ -516,11 +516,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1784497964,
-        "narHash": "sha256-vlHUuqAcbcH2RKmHbPiuQzbv1pnzzavXnI62RD0bqCU=",
+        "lastModified": 1784796856,
+        "narHash": "sha256-wWFrV5/Qbm+lyt5x20E/bSbfJiGKMo4RCxZV8cl/WZI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "241313f4e8e508cb9b13278c2b0fa25b9ca27163",
+        "rev": "e2587caef70cea85dd97d7daab492899902dbf5d",
         "type": "github"
       },
       "original": {
@@ -543,11 +543,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784057377,
-        "narHash": "sha256-yycNej5//EsRbV10moBoh+/63vXEwZD1ZFEiRm6C9rQ=",
+        "lastModified": 1784814601,
+        "narHash": "sha256-T32JXjZ7kIbhBn8/Har171yGg6IBdl97cxAWameqZDE=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "07180a087e4a00720dc0731cbcd8dec796974381",
+        "rev": "f316e949e0ed9df0e1e0bf645c6dce721d4e230e",
         "type": "github"
       },
       "original": {
@@ -701,11 +701,11 @@
         "tailwindcss-animated-src": "tailwindcss-animated-src"
       },
       "locked": {
-        "lastModified": 1784624925,
-        "narHash": "sha256-9a5Fu4rPqyuFvWqGCeQyWi9bVV9EckAMfig3DFnCs/o=",
+        "lastModified": 1784940214,
+        "narHash": "sha256-pamKCbpPld1qbPuDW8k8csoUJgGJElLMuG9tj2x4/r8=",
         "ref": "refs/heads/master",
-        "rev": "0e4302286bdb252f31df31f251c4e29f4dc89c6e",
-        "revCount": 2947,
+        "rev": "01117fddd3502c57bc20a65a75a66a4900d5d67d",
+        "revCount": 3006,
         "type": "git",
         "url": "https://tangled.org/tangled.org/core"
       },
@@ -744,11 +744,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784586513,
-        "narHash": "sha256-ewIv3xH9bQK7uMkU3xK6NWFEW5oIuAtIny8ifJwcY/E=",
+        "lastModified": 1784834038,
+        "narHash": "sha256-7kFP+NUILPvdhO7mQk90h2MnseMNvYzGPpclhmJEKF0=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "0ea161e9ac257510acabfb6e9dbf13630298760d",
+        "rev": "35443b74c3481fb963ee0a53175ab0e8001f2967",
         "type": "github"
       },
       "original": {
