@@ -2,4 +2,4 @@
 [linux]
 start:
     quickshell kill
-    quickshell -p ../../config/quickshell
+    quickshell -p ../config/quickshell

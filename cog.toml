@@ -8,5 +8,5 @@ owner = "luna-the-tuna"
 repository = "config"
 
 [git_hooks]
-commit-msg.path = "./scripts/git-hooks/commit-msg.sh"
-pre-commit.path = "./scripts/git-hooks/pre-commit.sh"
+commit-msg.path = "./.githooks/commit-msg.sh"
+pre-commit.path = "./.githooks/pre-commit.sh"
