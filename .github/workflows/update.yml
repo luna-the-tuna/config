@@ -1,0 +1,47 @@
+name: update
+run-name: Updating inputs
+
+on:
+  schedule:
+    - cron: "0 17 * * 5"
+
+jobs:
+  update:
+    name: Update inputs
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Install Lix
+        uses: ./.github/actions/install-lix
+      - name: Update inputs
+        run: nix flake update
+      - name: Check outputs
+        id: check
+        run: nix flake check --show-trace --option allow-import-from-derivation false
+        continue-on-error: true
+      - name: Push changes
+        if: steps.check.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add flake.lock
+          git diff --cached --quiet || git commit -m "chore(flake): update inputs"
+          git push
+      - name: Create pull request
+        if: steps.check.outcome == 'failure'
+        uses: peter-evans/create-pull-request@v8
+        with:
+          body: "This PR updates flake inputs. Note: `nix flake check` failed and requires manual review."
+          branch: "chore/update-flake-inputs"
+          commit-message: "chore(flake): update inputs"
+          delete-branch: true
+          title: "chore(flake): update inputs"
+      - name: Fail if check failed
+        if: steps.check.outcome == 'failure'
+        run: exit 1
