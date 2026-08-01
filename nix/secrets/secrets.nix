@@ -23,6 +23,11 @@ in
     keys.blackstar.luna
   ];
 
+  "crona/anki/luna.age".publicKeys = [
+    keys.crona.root
+    keys.crona.luna
+  ];
+
   "crona/passwords/luna.age".publicKeys = [
     keys.crona.root
     keys.crona.luna

@@ -8,6 +8,14 @@
   ...
 }:
 {
+  age = {
+    secretsDir = "${config.home.homeDirectory}/.local/share/agenix";
+  };
+
+  age.secrets = {
+    "anki/luna".file = "${self}/nix/secrets/crona/anki/luna.age";
+  };
+
   home.pointerCursor = {
     enable = true;
     name = "Bibata-Modern-Ice";
@@ -62,6 +70,20 @@
   programs.bash = {
     enable = true;
     initExtra = lib.mkOrder 2000 "exec ${lib.getExe pkgs.nushell}";
+  };
+
+  programs.anki = {
+    enable = true;
+
+    profiles.luna = {
+      default = true;
+
+      sync = {
+        url = "https://anki.luna.fish";
+        username = "luna";
+        keyFile = config.age.secrets."anki/luna".path;
+      };
+    };
   };
 
   programs.kitty = {
