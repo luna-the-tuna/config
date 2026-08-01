@@ -29,6 +29,11 @@
     tangled.enable = true;
   };
 
+  soul.services.anki = {
+    enable = true;
+    users = [ "luna" ];
+  };
+
   soul.services.nginx = {
     enable = true;
 

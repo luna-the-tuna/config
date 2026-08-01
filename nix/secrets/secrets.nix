@@ -3,6 +3,11 @@ let
 in
 {
   # keep-sorted start block=yes newline_separated=yes
+  "blackstar/anki/luna.age".publicKeys = [
+    keys.blackstar.root
+    keys.blackstar.luna
+  ];
+
   "blackstar/passwords/luna.age".publicKeys = [
     keys.blackstar.root
     keys.blackstar.luna
