@@ -35,6 +35,7 @@ mkSystemModule {
 
     autoEnable = true;
     mpv.enable = false;
+    anki.enable = false;
     sources.palette = inputs.catppuccin-palette;
   };
 
