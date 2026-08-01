@@ -23,7 +23,8 @@ let
     inputs.catppuccin.darwinModules.catppuccin
     inputs.extersia-pkgs.darwinModules.default
     inputs.home-manager.darwinModules.default
-    inputs.nixpkgs.nixosModules.readOnlyPkgs
+    inputs.homebrew.darwinModules.default
+    inputs.oomf-time.darwinModules.default
   ];
 in
 {
@@ -40,6 +41,12 @@ in
       class = "nixos";
       arch = "x86_64";
       path = "${self}/nix/hosts/crona";
+    };
+
+    hosts.excalibur = {
+      class = "darwin";
+      arch = "aarch64";
+      path = "${self}/nix/hosts/excalibur";
     };
 
     hosts.tsubaki = {

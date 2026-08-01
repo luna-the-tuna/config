@@ -61,6 +61,25 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
+    };
+
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
+
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+
     lix = {
       url = "git+https://git.lix.systems/lix-project/lix";
       flake = false;
@@ -82,6 +101,11 @@
       inputs.flake-parts.follows = "flake-parts";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.systems.follows = "systems";
+    };
+
+    oomf-time = {
+      url = "github:isabelroses/oomf-time";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     spicetify = {
