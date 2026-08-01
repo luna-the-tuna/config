@@ -1,6 +1,13 @@
 name: check
 run-name: Checking outputs
-on: push
+
+on:
+  push:
+    paths:
+      - "**.nix"
+      - "flake.lock"
+      - ".github/workflows/check.yml"
+      - ".github/actions/**/*.yml"
 
 jobs:
   check:
