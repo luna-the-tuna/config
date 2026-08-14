@@ -31,15 +31,7 @@
     pkgs.gimp
     pkgs.kdePackages.kdenlive
     pkgs.qbittorrent
-
-    (pkgs.syncplay.overrideAttrs {
-      src = pkgs.fetchFromGitHub {
-        repo = "syncplay";
-        owner = "Syncplay";
-        rev = "578b7b9ea25b505a645219cc7e4b755b728b8efe";
-        hash = "sha256-1GM3KTwC7kngtsdMCLRepubkOyuM7bXDpWoQTeuzB3M=";
-      };
-    })
+    pkgs.syncplay
   ];
 
   boot.initrd.availableKernelModules = [
