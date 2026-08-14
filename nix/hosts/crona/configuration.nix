@@ -30,6 +30,7 @@
     pkgs.crosspatch
     pkgs.gimp
     pkgs.kdePackages.kdenlive
+    pkgs.proton-vpn
     pkgs.qbittorrent
     pkgs.syncplay
   ];
