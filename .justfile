@@ -23,6 +23,11 @@ build hostname=hostname:
 switch hostname=hostname:
     nh {{ nh_builder }} switch -H {{ hostname }} -o {{ nh_output }} --show-trace
 
+[doc("Switch to the specified host configuration on the next boot")]
+[group("systems")]
+boot hostname=hostname:
+    nh {{ nh_builder }} boot -H {{ hostname }} -o {{ nh_output }} --show-trace
+
 [doc("Deploy the specified configuration to its corresponding host")]
 [group("servers")]
 [linux]
