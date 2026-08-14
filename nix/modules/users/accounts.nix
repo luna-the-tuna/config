@@ -20,6 +20,7 @@ let
   requiredGroups = builtins.filter doesGroupExist [
     "audio"
     "gamemode"
+    "networkmanager"
     "video"
     "wheel"
   ];
