@@ -125,7 +125,7 @@
     };
 
     treefmt = {
-      url = "github:numtide/treefmt-nix";
+      url = "github:qowoz/treefmt-nix/eval-warning";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
