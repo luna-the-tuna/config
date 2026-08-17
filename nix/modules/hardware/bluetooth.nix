@@ -18,6 +18,7 @@ mkNixosModule {
       powerOnBoot = true;
 
       settings.General = {
+        Privacy = "off";
         Experimental = true;
         FastConnectable = true;
       };
@@ -30,5 +31,10 @@ mkNixosModule {
     services = {
       blueman.enable = true;
     };
+
+    boot.kernelParams = [
+      "bluetooth.disable_ertm=1"
+      "btusb.enable_autosuspend=0"
+    ];
   };
 }
